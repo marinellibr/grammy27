@@ -1,4 +1,4 @@
-name: Deploy Grammy data to GitHub Pages
+name: Deploy Grammy ballot to GitHub Pages
 
 on:
   push:
@@ -25,25 +25,40 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Validate published JSON
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Test ballot logic
+        run: npm test
+      - name: Validate published data and category configuration
         run: |
           python3 - <<'PY'
           import json
           from pathlib import Path
-          root = Path('site')
+          root = Path('public')
           data = json.loads((root / 'grammy-2027-nominations.json').read_text())
           pending = json.loads((root / 'grammy-2027-spotify-pendencias.json').read_text())
+          config = json.loads((root / 'ballot-config.json').read_text())
           assert len(data['categories']) == data['categories_count']
           assert sum(len(c['nominees']) for c in data['categories']) == data['nominations_count']
           assert len(pending) == data['spotify_summary']['unresolved_nominations']
-          assert (root / 'index.html').is_file()
+          ids = {c['id'] for c in data['categories']}
+          assert isinstance(config['mainCategoryIds'], list)
+          assert len(set(config['mainCategoryIds'])) == len(config['mainCategoryIds'])
+          assert all(i in ids for i in config['mainCategoryIds'])
           PY
+      - name: Build React app
+        run: npm run build
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: dist
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
