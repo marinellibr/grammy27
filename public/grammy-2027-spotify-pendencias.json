@@ -154,13 +154,6 @@
     "source_url": "https://www.grammy.com/live-blog/#best-americana-album"
   },
   {
-    "category": "Best Bluegrass Album",
-    "title": "Earl Jam 2",
-    "artist": "Tony Trischka",
-    "nominee_type": "album",
-    "source_url": "https://www.grammy.com/live-blog/#best-bluegrass-album"
-  },
-  {
     "category": "Best Traditional Blues Album",
     "title": "Zydeco Trailrides and Southern Soul",
     "artist": "Sean Ardoin & Kreole Rock and Soul Featuring Mr. Sipp",
@@ -180,13 +173,6 @@
     "artist": "E J Ouellette",
     "nominee_type": "album",
     "source_url": "https://www.grammy.com/live-blog/#best-traditional-folk-album"
-  },
-  {
-    "category": "Best Contemporary Folk Album",
-    "title": "Le Sigh",
-    "artist": "Kris Angelis",
-    "nominee_type": "album",
-    "source_url": "https://www.grammy.com/live-blog/#best-contemporary-folk-album"
   },
   {
     "category": "Best Regional Roots Music Album",
@@ -271,13 +257,6 @@
     "artist": "Angélique Kidjo Featuring Pharrell Williams & Quavo",
     "nominee_type": "track",
     "source_url": "https://www.grammy.com/live-blog/#best-global-music-performance"
-  },
-  {
-    "category": "Best New Age, Ambient, Or Chant Album",
-    "title": "Night Music",
-    "artist": "Vicente Avella",
-    "nominee_type": "album",
-    "source_url": "https://www.grammy.com/live-blog/#best-new-age-ambient-or-chant-album"
   },
   {
     "category": "Best Children's Music Album",
@@ -483,13 +462,6 @@
     "source_url": "https://www.grammy.com/live-blog/#best-album-notes"
   },
   {
-    "category": "Best Album Notes",
-    "title": "Mother of the Blues: The Complete Paramount Recordings, 1923-1928",
-    "artist": "Ma Rainey",
-    "nominee_type": "album",
-    "source_url": "https://www.grammy.com/live-blog/#best-album-notes"
-  },
-  {
     "category": "Best Historical Album",
     "title": "The Bootleg Series Vol. 18: Through The Open Window, 1956-1963",
     "artist": "Bob Dylan",
@@ -675,13 +647,6 @@
     "category": "Best Classical Solo Vocal Album",
     "title": "Over My Head",
     "artist": "John Holiday, soloist",
-    "nominee_type": "album",
-    "source_url": "https://www.grammy.com/live-blog/#best-classical-solo-vocal-album"
-  },
-  {
-    "category": "Best Classical Solo Vocal Album",
-    "title": "Solitude",
-    "artist": "Reginald Mobley, soloist",
     "nominee_type": "album",
     "source_url": "https://www.grammy.com/live-blog/#best-classical-solo-vocal-album"
   },

@@ -61,7 +61,7 @@ try {
   assert.equal(png.readUInt32BE(16), 1080); assert.equal(png.readUInt32BE(20), 1920);
   await page.keyboard.press('Escape');
   await page.getByRole('button', { name: 'Grammy 2027 home' }).click();
-  await page.locator('.mode-card').first().click();
+  await page.locator('.mode-card:has(input[value="full"])').click();
   await page.getByRole('button', { name: 'Continue my ballot' }).click();
   await page.getByRole('heading', { name: 'Song Of The Year', exact: true }).waitFor();
   assert.match(await page.locator('.stepper-copy').innerText(), /2 of 100 picked/);

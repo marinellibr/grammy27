@@ -20,9 +20,9 @@ try {
   await page.goto(origin);
   await page.getByRole('heading', { name: 'Your picks. Your spotlight.' }).waitFor();
   await noOverflow(); await screenshot('home-mobile-light');
-  await page.locator('.mode-card').nth(1).click();
+  await page.locator('.mode-card:has(input[value="main"]) .mode-choice').click();
   assert.equal(await page.getByRole('button', { name: 'Lineup coming soon' }).isDisabled(), true);
-  await page.locator('.mode-card').nth(0).click();
+  await page.locator('.mode-card:has(input[value="full"])').click();
   await page.getByRole('switch', { name: 'Dark mode' }).click();
   assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark');
   await page.reload();
@@ -31,7 +31,7 @@ try {
   await page.getByRole('button', { name: 'Let’s make some picks' }).click();
   await page.getByRole('heading', { name: 'Album Of The Year', exact: true }).waitFor();
   assert.equal(await page.getByRole('button', { name: 'Next category' }).isDisabled(), true);
-  assert.match(await page.locator('iframe').first().getAttribute('src'), /open\.spotify\.com\/embed\/track\/.*theme=0/);
+  assert.match(await page.locator('iframe').first().getAttribute('src'), /open\.spotify\.com\/embed\/album\/.*theme=0/);
   await page.locator('.nominee-label').nth(1).click();
   await page.getByRole('button', { name: 'Next category' }).click();
   await page.getByRole('heading', { name: 'Record Of The Year', exact: true }).waitFor();

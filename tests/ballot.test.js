@@ -96,3 +96,31 @@ test('all five nominated music videos have official YouTube IDs and unsafe value
   assert.equal(getYouTubeVideo({ youtube_video_id: 'javascript:bad' }), null);
   assert.equal(getYouTubeVideo({}), null);
 });
+
+test('album categories always embed the complete album rather than a representative track', async () => {
+  const { isAlbumCategory } = await import('../src/ballot.js');
+  assert.equal(isAlbumCategory('Best Pop Vocal Album'), true);
+  assert.equal(isAlbumCategory('Melhor Álbum'), true);
+  assert.equal(isAlbumCategory('Record Of The Year'), false);
+  for (const category of data.categories.filter(category => isAlbumCategory(category.name))) {
+    for (const nominee of category.nominees) {
+      const embed = getEmbed(nominee, category.name);
+      if (embed) { assert.equal(embed.type, 'album'); assert.equal(embed.representative, false); }
+    }
+  }
+  const nominee = { spotify_id: 'a'.repeat(22), spotify_type: 'album', preview_track_id: 'b'.repeat(22) };
+  assert.equal(getEmbed(nominee, 'Album Of The Year').id, 'a'.repeat(22));
+  assert.equal(getEmbed(nominee, 'Record Of The Year').id, 'b'.repeat(22));
+  assert.equal(getEmbed({ preview_track_id: 'b'.repeat(22) }, 'Album Of The Year'), null);
+});
+
+test('story artwork URLs are verified media metadata and do not include unsafe schemes', () => {
+  const nominees = data.categories.flatMap(category => category.nominees);
+  const covers = nominees.filter(nominee => nominee.artwork_url);
+  assert.equal(covers.length, data.artwork_summary.nominations_with_artwork);
+  assert.ok(covers.length >= 394);
+  for (const nominee of covers) {
+    assert.match(nominee.artwork_url, /^https:\/\/(?:image-cdn-(?:fa|ak)\.spotifycdn\.com|i\.scdn\.co)\/image\//);
+    assert.ok(nominee.artwork_source_url.startsWith('https://open.spotify.com/'));
+  }
+});

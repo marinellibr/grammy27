@@ -42,7 +42,15 @@ export function getPicks(categories, choices) {
   return categories.filter(category => hasChoice(choices, category)).map(category => ({ category, nominee: category.nominees[choices[category.id]] }));
 }
 
-export function getEmbed(nominee) {
+export function isAlbumCategory(name) {
+  return /\balbum\b/i.test(String(name || '').normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
+}
+
+export function getEmbed(nominee, categoryName = '') {
+  if (isAlbumCategory(categoryName)) {
+    const id = nominee.spotify_album_id || (nominee.spotify_type === 'album' ? nominee.spotify_id : null);
+    return /^[a-zA-Z0-9]{22}$/.test(id || '') ? { type: 'album', id, representative: false } : null;
+  }
   if (/^[a-zA-Z0-9]{22}$/.test(nominee.preview_track_id || '')) return { type: 'track', id: nominee.preview_track_id, representative: nominee.preview_selection !== 'nominated_track' };
   if (['track', 'album', 'artist'].includes(nominee.spotify_type) && /^[a-zA-Z0-9]{22}$/.test(nominee.spotify_id || '')) return { type: nominee.spotify_type, id: nominee.spotify_id, representative: nominee.spotify_type !== 'track' };
   const work = nominee.submitted_works?.find(work => ['track', 'album', 'artist'].includes(work.spotify_type) && /^[a-zA-Z0-9]{22}$/.test(work.spotify_id || ''));
