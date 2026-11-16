@@ -11,7 +11,7 @@ try {
   await page.locator('.custom-mode-card').click();
   await page.getByRole('button', { name: 'Choose my categories', exact: true }).click();
   await page.getByRole('heading', { name: 'Set your own stage.' }).waitFor();
-  assert.equal(await page.getByRole('checkbox').count(), 98);
+  assert.equal(await page.getByRole('checkbox').count(), 100);
   assert.equal(await page.getByRole('button', { name: 'Continue with 0 categories' }).isDisabled(), true);
   await page.getByRole('checkbox', { name: 'Album Of The Year', exact: true }).check();
   assert.equal(await page.getByRole('button', { name: 'Continue with 1 category' }).isDisabled(), true);
@@ -30,8 +30,8 @@ try {
   assert.equal(await page.locator('.custom-mode-card input').isChecked(), true);
   await page.getByRole('button', { name: 'Choose my categories', exact: true }).click();
   assert.equal(await page.getByRole('checkbox', { checked: true }).count(), 2);
-  await page.getByRole('button', { name: 'Select all 98' }).click();
-  assert.equal(await page.getByRole('checkbox', { checked: true }).count(), 98);
+  await page.getByRole('button', { name: 'Select all 100' }).click();
+  assert.equal(await page.getByRole('checkbox', { checked: true }).count(), 100);
   await page.getByRole('button', { name: 'Clear selection' }).click();
   assert.equal(await page.getByRole('checkbox', { checked: true }).count(), 0);
   await page.getByRole('checkbox', { name: 'Album Of The Year', exact: true }).check();
@@ -64,7 +64,7 @@ try {
   await page.locator('.mode-card').first().click();
   await page.getByRole('button', { name: 'Continue my ballot' }).click();
   await page.getByRole('heading', { name: 'Song Of The Year', exact: true }).waitFor();
-  assert.match(await page.locator('.stepper-copy').innerText(), /2 of 98 picked/);
+  assert.match(await page.locator('.stepper-copy').innerText(), /2 of 100 picked/);
   await page.getByRole('button', { name: 'Grammy 2027 home' }).click();
   await page.locator('.custom-mode-card').click();
   await page.getByRole('button', { name: 'Choose my categories', exact: true }).click();
@@ -78,5 +78,5 @@ try {
   assert.equal(await page.locator('.summary-card').count(), 2);
   assert.equal(await page.locator('.summary-category').allTextContents().then(values => values.includes('Record Of The Year')), false);
   assert.deepEqual(errors, []);
-  console.log('PASS: all 98 category cards, 0/1/2 minimum, keyboard selection, search, select all/clear, persistence, mobile/dark/responsive layouts, two-category voting/summary/Story, changing the subset, and shared picks with the full ballot.');
+  console.log('PASS: all 100 category cards, 0/1/2 minimum, keyboard selection, search, select all/clear, persistence, mobile/dark/responsive layouts, two-category voting/summary/Story, changing the subset, and shared picks with the full ballot.');
 } finally { await browser.close(); }

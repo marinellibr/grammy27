@@ -7,7 +7,7 @@ const categories = orderCategories(data.categories);
 test('every published category is preserved and all valid picks appear in the recap and stories', () => {
   const choices = Object.fromEntries(categories.map(category => [category.id, category.nominees.length - 1]));
   const picks = getPicks(categories, choices), pages = storyPages(picks);
-  assert.equal(picks.length, 98);
+  assert.equal(picks.length, data.categories_count);
   assert.deepEqual(pages.flat(), picks);
   assert.ok(pages.every(page => page.length <= 6));
   assert.equal(pages.length, 17);
@@ -21,7 +21,7 @@ test('invalid or outdated stored picks never count as complete', () => {
 test('main categories remain undecided until configured, and can be enabled without code changes', () => {
   assert.equal(categoriesForMode(categories, 'main', { mainCategoryIds: [] }).length, 0);
   assert.deepEqual(categoriesForMode(categories, 'main', { mainCategoryIds: [categories[0].id, categories[3].id] }).map(c => c.id), [categories[0].id, categories[3].id]);
-  assert.equal(categoriesForMode(categories, 'full', {}).length, 98);
+  assert.equal(categoriesForMode(categories, 'full', {}).length, data.categories_count);
 });
 test('Spotify embeds always use real IDs and preserve representative previews', () => {
   for (const category of categories) for (const nominee of category.nominees) {
@@ -62,4 +62,37 @@ test('saved custom selections survive reload while invalid categories and old ba
     if (original === undefined) delete globalThis.localStorage;
     else globalThis.localStorage = original;
   }
+});
+
+test('the refreshed official list has all 100 categories and 526 nominees with a matching review catalog', () => {
+  const catalog = JSON.parse(readFileSync(new URL('../public/categories.json', import.meta.url)));
+  assert.equal(data.categories_count, 100);
+  assert.equal(data.categories.length, 100);
+  assert.equal(new Set(data.categories.map(category => category.id)).size, 100);
+  assert.equal(data.categories.reduce((total, category) => total + category.nominees.length, 0), 526);
+  assert.equal(data.nominations_count, 526);
+  assert.equal(new Set(data.categories.map(category => category.field)).size, 12);
+  assert.match(data.categories.find(category => category.id === 'best-contemporary-instrumental-album').field, /^Field 4:/);
+  assert.deepEqual(catalog.categories.map(category => category.id), data.categories.map(category => category.id));
+  assert.deepEqual(catalog.categories.map(category => category.number), Array.from({ length: 100 }, (_, index) => index + 1));
+  for (const id of ['best-traditional-pop-vocal-album', 'best-contemporary-instrumental-album']) {
+    const category = data.categories.find(category => category.id === id);
+    assert.equal(category.nominees.length, 5);
+    assert.ok(category.nominees.every(nominee => nominee.spotify_type === 'album' && nominee.spotify_status === 'verified' && nominee.preview_track_id));
+  }
+});
+
+test('all five nominated music videos have official YouTube IDs and unsafe values cannot become embeds', async () => {
+  const { getYouTubeVideo } = await import('../src/ballot.js');
+  const videos = data.categories.find(category => category.id === 'best-music-video').nominees;
+  assert.equal(videos.length, 5);
+  for (const nominee of videos) {
+    const video = getYouTubeVideo(nominee);
+    assert.match(video.id, /^[A-Za-z0-9_-]{11}$/);
+    assert.equal(video.url, nominee.youtube_url);
+    assert.ok(video.embedUrl.startsWith('https://www.youtube-nocookie.com/embed/'));
+    assert.equal(nominee.youtube_verified_source, nominee.youtube_url);
+  }
+  assert.equal(getYouTubeVideo({ youtube_video_id: 'javascript:bad' }), null);
+  assert.equal(getYouTubeVideo({}), null);
 });

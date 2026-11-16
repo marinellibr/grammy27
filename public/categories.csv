@@ -1,0 +1,101 @@
+﻿Number,Field,Category,ID,Nominees,Full Experience,Main Categories
+1,General Field,Record Of The Year,record-of-the-year,8,Included (current default),Pending decision
+2,General Field,Album Of The Year,album-of-the-year,8,Included (current default),Pending decision
+3,General Field,Song Of The Year,song-of-the-year,8,Included (current default),Pending decision
+4,General Field,Best New Artist,best-new-artist,8,Included (current default),Pending decision
+5,General Field,"Producer Of The Year, Non-Classical",producer-of-the-year-non-classical,5,Included (current default),Pending decision
+6,General Field,"Songwriter Of The Year, Non-Classical",songwriter-of-the-year-non-classical,5,Included (current default),Pending decision
+7,Field 1: Pop & Dance/Electronic,Best Pop Solo Performance,best-pop-solo-performance,5,Included (current default),Pending decision
+8,Field 1: Pop & Dance/Electronic,Best Pop Duo/Group Performance,best-pop-duo-group-performance,5,Included (current default),Pending decision
+9,Field 1: Pop & Dance/Electronic,Best Asian Pop Music Performance,best-asian-pop-music-performance,6,Included (current default),Pending decision
+10,Field 1: Pop & Dance/Electronic,Best Pop Vocal Album,best-pop-vocal-album,5,Included (current default),Pending decision
+11,Field 1: Pop & Dance/Electronic,Best Dance/Electronic Recording,best-dance-electronic-recording,6,Included (current default),Pending decision
+12,Field 1: Pop & Dance/Electronic,Best Dance Pop Recording,best-dance-pop-recording,5,Included (current default),Pending decision
+13,Field 1: Pop & Dance/Electronic,Best Dance/Electronic Album,best-dance-electronic-album,5,Included (current default),Pending decision
+14,Field 1: Pop & Dance/Electronic,Best Remixed Recording,best-remixed-recording,6,Included (current default),Pending decision
+15,"Field 2: Rock, Metal & Alternative Music",Best Rock Performance,best-rock-performance,5,Included (current default),Pending decision
+16,"Field 2: Rock, Metal & Alternative Music",Best Metal Performance,best-metal-performance,5,Included (current default),Pending decision
+17,"Field 2: Rock, Metal & Alternative Music",Best Rock Song,best-rock-song,7,Included (current default),Pending decision
+18,"Field 2: Rock, Metal & Alternative Music",Best Rock Album,best-rock-album,5,Included (current default),Pending decision
+19,"Field 2: Rock, Metal & Alternative Music",Best Alternative Music Performance,best-alternative-music-performance,5,Included (current default),Pending decision
+20,"Field 2: Rock, Metal & Alternative Music",Best Alternative Music Album,best-alternative-music-album,6,Included (current default),Pending decision
+21,"Field 3: R&B, Rap & Spoken Word Poetry",Best R&B Solo Performance,best-rb-solo-performance,5,Included (current default),Pending decision
+22,"Field 3: R&B, Rap & Spoken Word Poetry",Best R&B Collaboration or Duo/Group Performance,best-rb-collaboration-or-duo-group-performance,5,Included (current default),Pending decision
+23,"Field 3: R&B, Rap & Spoken Word Poetry",Best Traditional R&B Performance,best-traditional-rb-performance,5,Included (current default),Pending decision
+24,"Field 3: R&B, Rap & Spoken Word Poetry",Best R&B Song,best-rb-song,5,Included (current default),Pending decision
+25,"Field 3: R&B, Rap & Spoken Word Poetry",Best Progressive R&B Album,best-progressive-rb-album,5,Included (current default),Pending decision
+26,"Field 3: R&B, Rap & Spoken Word Poetry",Best R&B Album,best-rb-album,5,Included (current default),Pending decision
+27,"Field 3: R&B, Rap & Spoken Word Poetry",Best Rap Performance,best-rap-performance,5,Included (current default),Pending decision
+28,"Field 3: R&B, Rap & Spoken Word Poetry",Best Melodic Rap Performance,best-melodic-rap-performance,5,Included (current default),Pending decision
+29,"Field 3: R&B, Rap & Spoken Word Poetry",Best Rap Song,best-rap-song,5,Included (current default),Pending decision
+30,"Field 3: R&B, Rap & Spoken Word Poetry",Best Rap Album,best-rap-album,6,Included (current default),Pending decision
+31,"Field 3: R&B, Rap & Spoken Word Poetry",Best Spoken Word Poetry Album,best-spoken-word-poetry-album,5,Included (current default),Pending decision
+32,"Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",Best Jazz Performance,best-jazz-performance,5,Included (current default),Pending decision
+33,"Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",Best Jazz Vocal Album,best-jazz-vocal-album,5,Included (current default),Pending decision
+34,"Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",Best Jazz Instrumental Album,best-jazz-instrumental-album,5,Included (current default),Pending decision
+35,"Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",Best Large Jazz Ensemble Album,best-large-jazz-ensemble-album,5,Included (current default),Pending decision
+36,"Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",Best Latin Jazz Album,best-latin-jazz-album,5,Included (current default),Pending decision
+37,"Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",Best Alternative Jazz Album,best-alternative-jazz-album,5,Included (current default),Pending decision
+38,"Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",Best Traditional Pop Vocal Performance,best-traditional-pop-vocal-performance,5,Included (current default),Pending decision
+39,"Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",Best Traditional Pop Vocal Album,best-traditional-pop-vocal-album,5,Included (current default),Pending decision
+40,"Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",Best Contemporary Instrumental Album,best-contemporary-instrumental-album,5,Included (current default),Pending decision
+41,"Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",Best Musical Theater Album,best-musical-theater-album,5,Included (current default),Pending decision
+42,Field 5: Country & American Roots Music,Best Country Solo Performance,best-country-solo-performance,5,Included (current default),Pending decision
+43,Field 5: Country & American Roots Music,Best Country Duo/Group Performance,best-country-duo-group-performance,5,Included (current default),Pending decision
+44,Field 5: Country & American Roots Music,Best Country Song,best-country-song,5,Included (current default),Pending decision
+45,Field 5: Country & American Roots Music,Best Traditional Country Album,best-traditional-country-album,5,Included (current default),Pending decision
+46,Field 5: Country & American Roots Music,Best Contemporary Country Album,best-contemporary-country-album,5,Included (current default),Pending decision
+47,Field 5: Country & American Roots Music,Best American Roots Performance,best-american-roots-performance,5,Included (current default),Pending decision
+48,Field 5: Country & American Roots Music,Best Americana Performance,best-americana-performance,5,Included (current default),Pending decision
+49,Field 5: Country & American Roots Music,Best American Roots Song,best-american-roots-song,5,Included (current default),Pending decision
+50,Field 5: Country & American Roots Music,Best Americana Album,best-americana-album,5,Included (current default),Pending decision
+51,Field 5: Country & American Roots Music,Best Bluegrass Album,best-bluegrass-album,5,Included (current default),Pending decision
+52,Field 5: Country & American Roots Music,Best Traditional Blues Album,best-traditional-blues-album,5,Included (current default),Pending decision
+53,Field 5: Country & American Roots Music,Best Contemporary Blues Album,best-contemporary-blues-album,5,Included (current default),Pending decision
+54,Field 5: Country & American Roots Music,Best Traditional Folk Album,best-traditional-folk-album,5,Included (current default),Pending decision
+55,Field 5: Country & American Roots Music,Best Contemporary Folk Album,best-contemporary-folk-album,5,Included (current default),Pending decision
+56,Field 5: Country & American Roots Music,Best Regional Roots Music Album,best-regional-roots-music-album,5,Included (current default),Pending decision
+57,Field 6: Gospel & Contemporary Christian Music,Best Gospel Performance/Song,best-gospel-performance-song,5,Included (current default),Pending decision
+58,Field 6: Gospel & Contemporary Christian Music,Best Contemporary Christian Music Performance/Song,best-contemporary-christian-music-performance-song,6,Included (current default),Pending decision
+59,Field 6: Gospel & Contemporary Christian Music,Best Gospel Album,best-gospel-album,5,Included (current default),Pending decision
+60,Field 6: Gospel & Contemporary Christian Music,Best Contemporary Christian Music Album,best-contemporary-christian-music-album,5,Included (current default),Pending decision
+61,Field 6: Gospel & Contemporary Christian Music,Best Roots Gospel Album,best-roots-gospel-album,5,Included (current default),Pending decision
+62,"Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",Best Latin Song,best-latin-song,5,Included (current default),Pending decision
+63,"Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",Best Latin Pop Album,best-latin-pop-album,5,Included (current default),Pending decision
+64,"Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",Best Música Urbana Album,best-musica-urbana-album,6,Included (current default),Pending decision
+65,"Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",Best Latin Rock Or Alternative Album,best-latin-rock-or-alternative-album,5,Included (current default),Pending decision
+66,"Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",Best Música Mexicana Album (Including Tejano),best-musica-mexicana-album-including-tejano,5,Included (current default),Pending decision
+67,"Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",Best Tropical Latin Album,best-tropical-latin-album,5,Included (current default),Pending decision
+68,"Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",Best Global Music Performance,best-global-music-performance,5,Included (current default),Pending decision
+69,"Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",Best African Music Performance,best-african-music-performance,5,Included (current default),Pending decision
+70,"Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",Best Global Music Album,best-global-music-album,5,Included (current default),Pending decision
+71,"Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",Best Reggae Album,best-reggae-album,6,Included (current default),Pending decision
+72,"Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant","Best New Age, Ambient, Or Chant Album",best-new-age-ambient-or-chant-album,5,Included (current default),Pending decision
+73,"Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",Best Children's Music Album,best-childrens-music-album,5,Included (current default),Pending decision
+74,"Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",Best Comedy Album,best-comedy-album,6,Included (current default),Pending decision
+75,"Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film","Best Audio Book, Narration, and Storytelling Recording",best-audio-book-narration-and-storytelling-recording,6,Included (current default),Pending decision
+76,"Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",Best Compilation Soundtrack For Visual Media,best-compilation-soundtrack-for-visual-media,5,Included (current default),Pending decision
+77,"Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",Best Score Soundtrack For Visual Media (Includes Film And Television),best-score-soundtrack-for-visual-media-includes-film-and-television,5,Included (current default),Pending decision
+78,"Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",Best Score Soundtrack For Video Games and Other Interactive Media,best-score-soundtrack-for-video-games-and-other-interactive-media,5,Included (current default),Pending decision
+79,"Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",Best Song Written For Visual Media,best-song-written-for-visual-media,5,Included (current default),Pending decision
+80,"Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",Best Music Video,best-music-video,5,Included (current default),Pending decision
+81,"Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",Best Music Film,best-music-film,5,Included (current default),Pending decision
+82,"Field 9: Package, Notes & Historical",Best Recording Package,best-recording-package,5,Included (current default),Pending decision
+83,"Field 9: Package, Notes & Historical",Best Album Cover,best-album-cover,5,Included (current default),Pending decision
+84,"Field 9: Package, Notes & Historical",Best Album Notes,best-album-notes,5,Included (current default),Pending decision
+85,"Field 9: Package, Notes & Historical",Best Historical Album,best-historical-album,5,Included (current default),Pending decision
+86,"Field 10: Production, Engineering, Composition & Arrangement","Best Engineered Album, Non-Classical",best-engineered-album-non-classical,5,Included (current default),Pending decision
+87,"Field 10: Production, Engineering, Composition & Arrangement","Best Engineered Album, Classical",best-engineered-album-classical,6,Included (current default),Pending decision
+88,"Field 10: Production, Engineering, Composition & Arrangement","Producer Of The Year, Classical",producer-of-the-year-classical,5,Included (current default),Pending decision
+89,"Field 10: Production, Engineering, Composition & Arrangement",Best Immersive Audio Album,best-immersive-audio-album,5,Included (current default),Pending decision
+90,"Field 10: Production, Engineering, Composition & Arrangement",Best Instrumental Composition,best-instrumental-composition,5,Included (current default),Pending decision
+91,"Field 10: Production, Engineering, Composition & Arrangement","Best Arrangement, Instrumental Or A Cappella",best-arrangement-instrumental-or-a-cappella,5,Included (current default),Pending decision
+92,"Field 10: Production, Engineering, Composition & Arrangement","Best Arrangement, Instruments And Vocals",best-arrangement-instruments-and-vocals,6,Included (current default),Pending decision
+93,Field 11: Classical,Best Orchestral Performance,best-orchestral-performance,5,Included (current default),Pending decision
+94,Field 11: Classical,Best Opera Recording,best-opera-recording,5,Included (current default),Pending decision
+95,Field 11: Classical,Best Choral Performance,best-choral-performance,5,Included (current default),Pending decision
+96,Field 11: Classical,Best Chamber Music/Small Ensemble Performance,best-chamber-music-small-ensemble-performance,5,Included (current default),Pending decision
+97,Field 11: Classical,Best Classical Instrumental Solo,best-classical-instrumental-solo,5,Included (current default),Pending decision
+98,Field 11: Classical,Best Classical Solo Vocal Album,best-classical-solo-vocal-album,5,Included (current default),Pending decision
+99,Field 11: Classical,Best Classical Compendium,best-classical-compendium,5,Included (current default),Pending decision
+100,Field 11: Classical,Best Contemporary Classical Composition,best-contemporary-classical-composition,5,Included (current default),Pending decision

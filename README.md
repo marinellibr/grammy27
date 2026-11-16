@@ -18,10 +18,11 @@ After starting `npm run preview -- --port 4173`, run `npm run test:browser` for 
 ## Features
 
 - Custom ballot builder with one selectable card for each category, search, select-all/clear actions, and a minimum of two categories. Selections persist locally, and voting, summaries, and Stories include only the chosen categories.
-- Full ballot covering all 98 published categories, with native radio controls and Spotify embeds where confirmed IDs are available.
+- Full ballot covering all 100 official categories, with native radio controls and Spotify embeds where confirmed IDs are available.
+- Best Music Video uses the five official YouTube music videos in responsive privacy-enhanced embeds, with direct YouTube links. Other categories keep Spotify players.
 - Back/next controls, optional advance on selection, persistent picks, editable final summary.
 - White/gold light mode and black/gold dark mode; theme preference persists locally.
-- Local 1080 × 1920 PNG export, six picks per image, with download, native sharing when supported, and a ZIP of all images. A 98-category ballot creates 17 story images, including every pick.
+- Local 1080 × 1920 PNG export, six picks per image, with download, native sharing when supported, and a ZIP of all images. A 100-category ballot creates 17 story images, including every pick.
 - No backend, accounts, or official vote submission. Picks remain in browser storage.
 
 ## Configure the main-category ballot
@@ -43,8 +44,16 @@ The original JSON endpoints remain available:
 - https://marinellibr.github.io/grammy27/grammy-2027-nominations.json
 - https://marinellibr.github.io/grammy27/grammy-2027-spotify-pendencias.json
 
-Snapshot from https://www.grammy.com/live-blog/ on November 16, 2026. 98 categories, 516 nominations, 388 confirmed Spotify matches, 302 preview URLs, 102 unresolved matches and 26 professional/film/audiobook entries handled separately. Not all nominees have Spotify embeds. Album/artist/professional entries may use a representative track, labeled in the UI. Spotify controls playback, login requirements, regional availability, and preview duration.
+Verified against the official full list at https://www.grammy.com/news/2027-grammys-full-nominations-full-winners-nominees-list/ on November 16, 2026. 100 categories, 526 nominations, 398 confirmed Spotify matches, 312 preview URLs, 102 unresolved matches and 26 professional/film/audiobook entries handled separately. Not all nominees have Spotify embeds. Album/artist/professional entries may use a representative track, labeled in the UI. Spotify controls playback, login requirements, regional availability, and preview duration.
 
 ## Deploy
 
 The GitHub Actions workflow installs dependencies, tests, validates the public JSON and category configuration, builds Vite, and deploys `dist/` through GitHub Pages. Keep Settings → Pages → Source set to **GitHub Actions**. The app uses `/grammy27/` as its base URL.
+
+Run `node tests/youtube-browser-check.mjs` after starting the preview to verify the new categories, YouTube video controls, responsive layout, and saved-pick compatibility. Media provider responses are isolated in browser tests.
+
+## Category review
+
+The complete catalog is available at `public/categories.json`, `public/categories.csv`, and `public/categories.md`, using official category numbers and fields. Main Categories remains undecided; Full Experience currently contains all 100 categories. No new split is inferred without the user’s selection.
+
+The update adds Best Traditional Pop Vocal Album and Best Contemporary Instrumental Album (five nominees each), preserves existing nominee order and media IDs, and corrects Elaine L. Martone’s name to match the official complete list.

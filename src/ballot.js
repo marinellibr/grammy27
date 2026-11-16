@@ -49,6 +49,12 @@ export function getEmbed(nominee) {
   return work ? { type: work.spotify_type, id: work.spotify_id, representative: true } : null;
 }
 
+export function getYouTubeVideo(nominee) {
+  const id = nominee.youtube_video_id;
+  if (!/^[A-Za-z0-9_-]{11}$/.test(id || '')) return null;
+  return { id, url: `https://www.youtube.com/watch?v=${id}`, embedUrl: `https://www.youtube-nocookie.com/embed/${id}?rel=0&playsinline=1` };
+}
+
 export function readSaved(categories) {
   let saved = {};
   try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}') || {}; } catch { /* A ballot also works without storage. */ }

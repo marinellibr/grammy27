@@ -48,7 +48,7 @@ try {
     await page.locator('.nominee-label').nth(i % categories[i].nominees.length).click();
   }
   await page.getByRole('heading', { name: 'Your ballot. Your kind of golden.' }).waitFor();
-  assert.equal(await page.locator('.summary-card').count(), 98);
+  assert.equal(await page.locator('.summary-card').count(), categories.length);
   await noOverflow();
   await page.screenshot({ path: new URL('../qa/summary-mobile-light.png', import.meta.url).pathname });
   await page.getByRole('button', { name: 'Edit your pick for Album Of The Year', exact: true }).click();
@@ -77,12 +77,12 @@ try {
   await page.keyboard.press('Escape');
   await page.getByRole('button', { name: 'Start a fresh ballot', exact: true }).click();
   await page.getByRole('button', { name: 'Keep my picks', exact: true }).click();
-  assert.equal(await page.locator('.summary-card').count(), 98);
+  assert.equal(await page.locator('.summary-card').count(), categories.length);
   await page.getByRole('button', { name: 'Grammy 2027 home' }).click();
   for (const width of [320, 768, 1440]) { await page.setViewportSize({ width, height: 900 }); await noOverflow(); }
   await screenshot('home-desktop-light');
   await page.getByRole('switch', { name: 'Dark mode' }).click();
   await screenshot('home-desktop-dark');
   assert.deepEqual(errors, []);
-  console.log('PASS: 98-category ballot, next/back, auto-advance, resume, main-mode placeholder, themes, summary editing, modal, PNG/17-image ZIP export, responsive widths, no JS errors. Spotify iframe URLs verified; playback isolated.');
+  console.log('PASS: 100-category ballot, next/back, auto-advance, resume, main-mode placeholder, themes, summary editing, modal, PNG/17-image ZIP export, responsive widths, no JS errors. Spotify iframe URLs verified; playback isolated.');
 } finally { await browser.close(); }
