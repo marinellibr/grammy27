@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { createRoot } from 'react-dom/client';
-import { STORAGE_KEY, orderCategories, categoriesForMode, getPicks, hasChoice, getEmbed, readSaved } from './ballot';
+import { STORAGE_KEY, orderCategories, categoriesForMode, getPicks, hasChoice, getEmbed, readSaved, canStartBallot } from './ballot';
 import { generateStories, downloadBlob, downloadAllStories } from './story';
 import './styles.css';
 
@@ -44,10 +44,11 @@ function App() {
 function BallotApp({ data, config }) {
   const [saved] = useState(() => readSaved(data.categories));
   const [screen, setScreen] = useState('home'), [mode, setMode] = useState(saved.mode), [choices, setChoices] = useState(saved.choices), [autoAdvance, setAutoAdvance] = useState(saved.autoAdvance);
+  const [customCategoryIds, setCustomCategoryIds] = useState(saved.customCategoryIds), [categoryQuery, setCategoryQuery] = useState('');
   const [index, setIndex] = useState(0), [editing, setEditing] = useState(false), [theme, setTheme] = useState(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
   const [storageWarning, setStorageWarning] = useState(false), [storyOpen, setStoryOpen] = useState(false), [restartOpen, setRestartOpen] = useState(false);
   const heading = useRef(null), pendingAdvance = useRef(null);
-  const categories = useMemo(() => categoriesForMode(data.categories, mode, config), [data.categories, mode, config]);
+  const categories = useMemo(() => categoriesForMode(data.categories, mode, config, customCategoryIds), [data.categories, mode, config, customCategoryIds]);
   const mainCategories = useMemo(() => categoriesForMode(data.categories, 'main', config), [data.categories, config]);
   const picks = getPicks(categories, choices), category = categories[index], selected = category && hasChoice(choices, category), completed = categories.length > 0 && picks.length === categories.length;
   useEffect(() => {
@@ -56,8 +57,8 @@ function BallotApp({ data, config }) {
     try { localStorage.setItem('grammy27-theme', theme); } catch {}
   }, [theme]);
   useEffect(() => {
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ choices, mode, autoAdvance, cursor: category?.id || saved.cursor })); setStorageWarning(false); } catch { setStorageWarning(true); }
-  }, [choices, mode, autoAdvance, category?.id, saved.cursor]);
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ choices, mode, customCategoryIds, autoAdvance, cursor: category?.id || saved.cursor })); setStorageWarning(false); } catch { setStorageWarning(true); }
+  }, [choices, mode, customCategoryIds, autoAdvance, category?.id, saved.cursor]);
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
     heading.current?.focus({ preventScroll: true });
@@ -66,7 +67,7 @@ function BallotApp({ data, config }) {
   useEffect(() => () => clearTimeout(pendingAdvance.current), []);
 
   function start() {
-    if (!categories.length) return;
+    if (!canStartBallot(categories, mode)) return;
     const firstUnanswered = categories.findIndex(category => !hasChoice(choices, category));
     setEditing(false);
     if (firstUnanswered === -1) setScreen('summary');
@@ -93,14 +94,18 @@ function BallotApp({ data, config }) {
   function back() {
     clearTimeout(pendingAdvance.current);
     if (editing) { setEditing(false); setScreen('summary'); }
-    else if (index === 0) setScreen('home');
+    else if (index === 0) setScreen(mode === 'custom' ? 'customize' : 'home');
     else setIndex(index - 1);
   }
   function changeMode(value) { clearTimeout(pendingAdvance.current); setMode(value); }
+  function toggleCategory(id) {
+    setCustomCategoryIds(current => current.includes(id) ? current.filter(value => value !== id) : [...current, id]);
+  }
+  const visibleCategories = data.categories.filter(category => category.name.toLowerCase().includes(categoryQuery.trim().toLowerCase()));
   const fullPicks = getPicks(data.categories, choices).length;
-  const stageLabel = screen === 'summary' ? 'Your ballot' : screen === 'ballot' ? 'Make your picks' : 'The fan ballot';
+  const stageLabel = screen === 'summary' ? 'Your ballot' : screen === 'ballot' ? 'Make your picks' : screen === 'customize' ? 'Build your ballot' : 'The fan ballot';
 
-  return <div className={`app ${screen === 'ballot' ? 'with-dock' : ''}`}>
+  return <div className={`app ${screen === 'ballot' || screen === 'customize' ? 'with-dock' : ''}`}>
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="site-header"><div className="header-inner">
       <button className="brand" onClick={() => { clearTimeout(pendingAdvance.current); setScreen('home'); }} aria-label="Grammy 2027 home"><span className="brand-symbol"><Icon name="spark" size={23} /></span><span>GRAMMY<span className="brand-year">27</span></span></button>
@@ -116,16 +121,26 @@ function BallotApp({ data, config }) {
           <div className="mode-options" role="radiogroup" aria-label="Ballot version">
             <label className={`mode-card ${mode === 'full' ? 'is-selected' : ''}`}><input type="radio" name="mode" value="full" checked={mode === 'full'} onChange={() => changeMode('full')} /><span className="mode-top"><span className="mode-icon"><Icon name="grid" size={24} /></span><span className="radio-visual" aria-hidden="true">{mode === 'full' && <span />}</span></span><span className="mode-name">The full experience</span><span className="mode-description">Every genre. Every category. Give all your favorites their moment.</span><span className="mode-bottom"><span className="pill">{data.categories.length} categories</span><span>For the music obsessed</span></span></label>
             <label className={`mode-card ${mode === 'main' ? 'is-selected' : ''}`}><input type="radio" name="mode" value="main" checked={mode === 'main'} onChange={() => changeMode('main')} /><span className="mode-top"><span className="mode-icon"><Icon name="star" size={25} /></span><span className="radio-visual" aria-hidden="true">{mode === 'main' && <span />}</span></span><span className="mode-name">Main categories</span><span className="mode-description">The headline moments. A shorter ballot for your biggest predictions.</span><span className="mode-bottom"><span className="pill">{mainCategories.length ? `${mainCategories.length} categories` : 'Coming soon'}</span><span>A little less, just as golden</span></span></label>
+            <label className={`mode-card custom-mode-card ${mode === 'custom' ? 'is-selected' : ''}`}><input type="radio" name="mode" value="custom" checked={mode === 'custom'} onChange={() => changeMode('custom')} /><span className="mode-top"><span className="mode-icon"><Icon name="check" size={25} /></span><span className="radio-visual" aria-hidden="true">{mode === 'custom' && <span />}</span></span><span className="mode-name">Custom categories</span><span className="mode-description">Your genres. Your favorites. Build a ballot with the categories you care about.</span><span className="mode-bottom"><span className="pill">Choose 2 or more</span><span>Make it your own</span></span></label>
           </div>
           {mode === 'main' && !mainCategories.length && <p className="mode-note" role="status">The main-category lineup is still being curated. The full experience is ready whenever you are.</p>}
-          <div className="start-row"><button className="button primary start-button" disabled={!categories.length} onClick={start}>{!categories.length ? 'Lineup coming soon' : completed ? 'View my ballot' : picks.length ? 'Continue my ballot' : 'Let’s make some picks'}<Icon name="arrow" size={19} /></button><span className="start-caption">{picks.length ? `${picks.length} of ${categories.length} picks saved` : 'No sign-up. Just your taste.'}</span></div>
+          <div className="start-row"><button className="button primary start-button" disabled={mode !== 'custom' && !categories.length} onClick={() => mode === 'custom' ? setScreen('customize') : start()}>{mode === 'custom' ? 'Choose my categories' : !categories.length ? 'Lineup coming soon' : completed ? 'View my ballot' : picks.length ? 'Continue my ballot' : 'Let’s make some picks'}<Icon name="arrow" size={19} /></button><span className="start-caption">{mode === 'custom' ? `${customCategoryIds.length} ${customCategoryIds.length === 1 ? 'category' : 'categories'} selected · Pick at least 2` : picks.length ? `${picks.length} of ${categories.length} picks saved` : 'No sign-up. Just your taste.'}</span></div>
           {fullPicks > 0 && mode === 'main' && !categories.length && <p className="small-muted">Your {fullPicks} saved picks are waiting in the full experience.</p>}
         </section>
         <div className="how-it-works"><span><b>01</b> Choose your ballot</span><Icon name="arrow" size={15} /><span><b>02</b> Listen & pick</span><Icon name="arrow" size={15} /><span><b>03</b> Share your spotlight</span></div>
       </>}
 
+      {screen === 'customize' && <>
+        <div className="ballot-topline"><button className="text-button" onClick={() => setScreen('home')}><Icon name="back" size={16} /> Ballot versions</button><span>CUSTOM CATEGORIES</span></div>
+        <section className="category-heading custom-heading"><p className="eyebrow">A BALLOT THAT SOUNDS LIKE YOU</p><h1 ref={heading} tabIndex="-1">Set your own stage.</h1><p>Pick the categories you want to vote in. Select at least two to get started.</p></section>
+        <div className="category-picker-tools"><label className="category-search"><span>Find a category</span><input type="search" value={categoryQuery} onChange={event => setCategoryQuery(event.target.value)} placeholder="Search categories…" /></label><div className="category-bulk-actions"><button className="text-button" onClick={() => setCustomCategoryIds(data.categories.map(category => category.id))}>Select all {data.categories.length}</button><button className="text-button" disabled={!customCategoryIds.length} onClick={() => setCustomCategoryIds([])}>Clear selection</button></div></div>
+        <fieldset className="category-picker"><legend className="sr-only">Choose at least two categories for your custom ballot</legend>{visibleCategories.map(item => { const checked = customCategoryIds.includes(item.id); return <label key={item.id} className={`category-pick-card ${checked ? 'is-selected' : ''}`}><input type="checkbox" checked={checked} onChange={() => toggleCategory(item.id)} aria-label={item.name.replace(/\s*\(new for 2027\)/i, '')} /><span className="category-pick-check" aria-hidden="true">{checked && <Icon name="check" size={15} />}</span><span className="category-pick-copy"><span className="category-pick-name">{item.name.replace(/\s*\(new for 2027\)/i, '')}</span><span className="category-pick-count">{item.nominees.length} nominees</span></span></label>; })}</fieldset>
+        {!visibleCategories.length && <p className="category-empty" role="status">No categories match “{categoryQuery}”. Try another search.</p>}
+        <div className="ballot-dock category-picker-dock"><div className="dock-inner"><p className="category-selection-status" role="status"><strong>{customCategoryIds.length} selected</strong><span>{customCategoryIds.length < 2 ? `Choose ${2 - customCategoryIds.length} more to continue` : 'Your custom ballot is ready'}</span></p><div className="dock-navigation"><button className="button secondary" onClick={() => setScreen('home')}><Icon name="back" size={18} /> Back</button><button className="button primary" disabled={!canStartBallot(categories, mode)} onClick={start}>Continue with {customCategoryIds.length} {customCategoryIds.length === 1 ? 'category' : 'categories'}<Icon name="arrow" size={18} /></button></div></div></div>
+      </>}
+
       {screen === 'ballot' && category && <>
-        <div className="ballot-topline"><button className="text-button" onClick={() => { clearTimeout(pendingAdvance.current); setScreen('home'); }}><Icon name="back" size={16} /> Your ballot</button><span>{mode === 'full' ? 'FULL EXPERIENCE' : 'MAIN CATEGORIES'}</span></div>
+        <div className="ballot-topline"><button className="text-button" onClick={() => { clearTimeout(pendingAdvance.current); setScreen(mode === 'custom' ? 'customize' : 'home'); }}><Icon name="back" size={16} /> {mode === 'custom' ? 'Your categories' : 'Your ballot'}</button><span>{mode === 'full' ? 'FULL EXPERIENCE' : mode === 'custom' ? 'CUSTOM CATEGORIES' : 'MAIN CATEGORIES'}</span></div>
         <div className="stepper" aria-label="Ballot progress"><div className="stepper-copy"><span>Category <strong>{String(index + 1).padStart(2, '0')}</strong><span className="stepper-total"> / {categories.length}</span></span><span>{picks.length} of {categories.length} picked</span></div><div className="progress-track" role="progressbar" aria-label="Categories picked" aria-valuemin="0" aria-valuemax={categories.length} aria-valuenow={picks.length}><span style={{ width: `${picks.length / categories.length * 100}%` }} /></div><div className="step-dots" aria-hidden="true">{Array.from({ length: Math.min(categories.length, 12) }, (_, i) => <span key={i} className={i < Math.ceil(picks.length / categories.length * Math.min(categories.length, 12)) ? 'filled' : ''} />)}</div></div>
         <section className="category-heading"><p className="eyebrow">THE NOMINEES ARE IN. THE PICK IS YOURS.</p><h1 ref={heading} tabIndex="-1">{category.name.replace(/\s*\(new for 2027\)/i, '')}</h1><p>Press play. Find your favorite. Give them your vote.</p><div className="category-meta"><span><Icon name="headphones" size={15} /> Listen with Spotify</span><span>{category.nominees.length} nominees · Choose one</span></div></section>
         <fieldset className="nominee-list" key={`${category.id}-${theme}`}><legend className="sr-only">Choose your pick for {category.name}</legend>{category.nominees.map((nominee, nomineeIndex) => <NomineeCard key={`${category.id}-${nomineeIndex}`} nominee={nominee} index={nomineeIndex} checked={choices[category.id] === nomineeIndex} onChoose={() => choose(nomineeIndex)} theme={theme} categoryId={category.id} />)}</fieldset>
@@ -139,7 +154,7 @@ function BallotApp({ data, config }) {
         <div className="summary-list">{picks.map(({ category, nominee }) => <article className="summary-card" key={category.id}><div className="summary-check"><Icon name="check" size={17} /></div><div className="summary-card-copy"><p className="summary-category">{category.name.replace(/\s*\(new for 2027\)/i, '')}</p><h3>{nominee.title || nominee.artist}</h3>{nominee.title && <p className="summary-artist">{nominee.artist}</p>}</div><button className="edit-button" onClick={() => { setIndex(categories.findIndex(item => item.id === category.id)); setEditing(true); setScreen('ballot'); }} aria-label={`Edit your pick for ${category.name}`}>Edit</button></article>)}</div>
         <div className="summary-actions"><button className="button primary" onClick={() => setStoryOpen(true)}><Icon name="share" size={18} /> Create my story</button><button className="text-button" onClick={() => setRestartOpen(true)}>Start a fresh ballot</button></div>
       </>}
-      {screen !== 'ballot' && <footer className="site-footer"><span className="footer-brand"><Icon name="spark" size={17} /> MADE FOR THE LOVE OF MUSIC.</span><p>An independent fan ballot. Your picks stay on this device.</p><div><a href="https://www.grammy.com/live-blog/" target="_blank" rel="noreferrer">Official nominees <Icon name="external" size={12} /></a><span>·</span><a href={`${import.meta.env.BASE_URL}grammy-2027-nominations.json`} target="_blank" rel="noreferrer">Nomination data</a></div><p className="snapshot-note">Nominee snapshot · November 16, 2026</p></footer>}
+      {screen !== 'ballot' && screen !== 'customize' && <footer className="site-footer"><span className="footer-brand"><Icon name="spark" size={17} /> MADE FOR THE LOVE OF MUSIC.</span><p>An independent fan ballot. Your picks stay on this device.</p><div><a href="https://www.grammy.com/live-blog/" target="_blank" rel="noreferrer">Official nominees <Icon name="external" size={12} /></a><span>·</span><a href={`${import.meta.env.BASE_URL}grammy-2027-nominations.json`} target="_blank" rel="noreferrer">Nomination data</a></div><p className="snapshot-note">Nominee snapshot · November 16, 2026</p></footer>}
     </main>
     {storyOpen && <StoryModal picks={picks} theme={theme} onClose={() => setStoryOpen(false)} />}
     {restartOpen && <Dialog title="A fresh set of picks?" onClose={() => setRestartOpen(false)}><p className="dialog-description">This will clear all your saved selections, including picks in the other ballot version.</p><div className="dialog-actions"><button className="button secondary" onClick={() => setRestartOpen(false)}>Keep my picks</button><button className="button primary" onClick={() => { setChoices({}); setIndex(0); setEditing(false); setRestartOpen(false); setScreen('home'); }}>Start fresh</button></div></Dialog>}

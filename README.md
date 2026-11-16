@@ -13,10 +13,11 @@ npm run dev
 
 Vite serves the app under `/grammy27/`. `npm test` checks ballot integrity, stored choices, Spotify embed IDs and story pagination; `npm run build` creates `dist/`.
 
-After starting `npm run preview -- --port 4173`, run `npm run test:browser` for the complete browser flow. This uses `/usr/bin/chromium` by default; set `CHROMIUM_PATH` or `BALLOT_URL` to override. Spotify iframe responses are isolated in that test; playback remains controlled by Spotify.
+After starting `npm run preview -- --port 4173`, run `npm run test:browser` for the complete browser flow. This uses `/usr/bin/chromium` by default; set `CHROMIUM_PATH` or `BALLOT_URL` to override. Run `node tests/custom-browser-check.mjs` to verify custom selection, the two-category minimum, persistence, and the custom voting/export flow. Spotify iframe responses are isolated in these tests; playback remains controlled by Spotify.
 
 ## Features
 
+- Custom ballot builder with one selectable card for each category, search, select-all/clear actions, and a minimum of two categories. Selections persist locally, and voting, summaries, and Stories include only the chosen categories.
 - Full ballot covering all 98 published categories, with native radio controls and Spotify embeds where confirmed IDs are available.
 - Back/next controls, optional advance on selection, persistent picks, editable final summary.
 - White/gold light mode and black/gold dark mode; theme preference persists locally.

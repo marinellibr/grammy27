@@ -8,10 +8,20 @@ export function orderCategories(categories) {
   });
 }
 
-export function categoriesForMode(categories, mode, config) {
-  if (mode !== 'main') return categories;
-  const ids = new Set(Array.isArray(config.mainCategoryIds) ? config.mainCategoryIds : []);
+export function categoriesForMode(categories, mode, config, customCategoryIds = []) {
+  if (mode !== 'main' && mode !== 'custom') return categories;
+  const selectedIds = mode === 'custom' ? customCategoryIds : config.mainCategoryIds;
+  const ids = new Set(Array.isArray(selectedIds) ? selectedIds : []);
   return categories.filter(category => ids.has(category.id));
+}
+
+export function validCustomCategories(ids, categories) {
+  const selected = new Set(Array.isArray(ids) ? ids : []);
+  return categories.filter(category => selected.has(category.id)).map(category => category.id);
+}
+
+export function canStartBallot(categories, mode) {
+  return categories.length >= (mode === 'custom' ? 2 : 1);
 }
 
 export function validChoices(choices, categories) {
@@ -44,7 +54,8 @@ export function readSaved(categories) {
   try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}') || {}; } catch { /* A ballot also works without storage. */ }
   return {
     choices: validChoices(saved.choices, categories),
-    mode: saved.mode === 'main' ? 'main' : 'full',
+    mode: ['main', 'custom'].includes(saved.mode) ? saved.mode : 'full',
+    customCategoryIds: validCustomCategories(saved.customCategoryIds, categories),
     autoAdvance: saved.autoAdvance === true,
     cursor: typeof saved.cursor === 'string' ? saved.cursor : null,
   };

@@ -31,3 +31,35 @@ test('Spotify embeds always use real IDs and preserve representative previews', 
   assert.equal(getEmbed({ spotify_id: 'bad', spotify_type: 'track' }), null);
   assert.equal(getEmbed({ preview_track_id: 'x'.repeat(22), preview_selection: 'first_available_track_on_album' }).representative, true);
 });
+
+test('custom ballots require two distinct valid categories and contain only the chosen categories', async () => {
+  const { validCustomCategories, canStartBallot } = await import('../src/ballot.js');
+  const ids = [categories[4].id, categories[0].id, categories[0].id, 'unknown-category'];
+  const clean = validCustomCategories(ids, categories);
+  assert.deepEqual(clean, [categories[0].id, categories[4].id]);
+  assert.deepEqual(validCustomCategories(null, categories), []);
+  assert.equal(canStartBallot(categoriesForMode(categories, 'custom', {}, []), 'custom'), false);
+  assert.equal(canStartBallot(categoriesForMode(categories, 'custom', {}, [categories[0].id, categories[0].id, 'unknown-category']), 'custom'), false);
+  const custom = categoriesForMode(categories, 'custom', {}, clean);
+  assert.equal(canStartBallot(custom, 'custom'), true);
+  const choices = Object.fromEntries(categories.map(category => [category.id, 0]));
+  assert.deepEqual(getPicks(custom, choices).map(pick => pick.category.id), clean);
+  assert.equal(storyPages(getPicks(custom, choices)).flat().length, 2);
+});
+
+test('saved custom selections survive reload while invalid categories and old ballot formats stay safe', async () => {
+  const { readSaved } = await import('../src/ballot.js');
+  const original = globalThis.localStorage;
+  try {
+    globalThis.localStorage = { getItem: () => JSON.stringify({ mode: 'custom', customCategoryIds: [categories[0].id, categories[0].id, categories[3].id, 'invalid'], choices: { [categories[0].id]: 1 } }) };
+    const saved = readSaved(categories);
+    assert.equal(saved.mode, 'custom');
+    assert.deepEqual(saved.customCategoryIds, [categories[0].id, categories[3].id]);
+    assert.equal(saved.choices[categories[0].id], 1);
+    globalThis.localStorage = { getItem: () => JSON.stringify({ mode: 'full', choices: {} }) };
+    assert.deepEqual(readSaved(categories).customCategoryIds, []);
+  } finally {
+    if (original === undefined) delete globalThis.localStorage;
+    else globalThis.localStorage = original;
+  }
+});
