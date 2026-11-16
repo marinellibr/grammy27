@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Indicações do Grammy 2027 em JSON, com IDs do Spotify e previews confirmados.">
+<title>Grammy 2027 · Dados das indicações</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#131411;color:#f5f2e9}*{box-sizing:border-box}body{margin:0}main{max-width:900px;padding:80px 24px;margin:auto}.eyebrow{color:#cfb479;text-transform:uppercase;letter-spacing:.15em;font-size:.8rem}h1{font-size:clamp(2.4rem,7vw,4.5rem);line-height:1.1;max-width:700px;letter-spacing:-.05em;margin:20px 0}p{color:#babdb2;line-height:1.7;max-width:720px}a{color:#e0c585;text-underline-offset:4px}section{border-top:1px solid #36392f;padding:24px 0;margin-top:32px}h2{font-size:1.2rem}dl{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}dl div{padding:18px;border:1px solid #36392f;border-radius:8px}dt{color:#babdb2;font-size:.9rem}dd{font-size:2rem;margin:8px 0 0}nav{display:flex;gap:16px;flex-wrap:wrap;margin:28px 0}nav a{padding:14px 18px;border:1px solid #cfb479;border-radius:6px;text-decoration:none}nav a:first-child{background:#cfb479;color:#131411}code{color:#f5f2e9;overflow-wrap:anywhere}li{color:#babdb2;line-height:1.8}footer{margin-top:48px;font-size:.85rem;color:#babdb2}@media(max-width:540px){main{padding-top:40px}dl{grid-template-columns:1fr 1fr}nav a{width:100%}}
+</style>
+</head>
+<body><main>
+<div class="eyebrow">69ª edição · Grammy 2027</div>
+<h1>As indicações, em JSON.</h1>
+<p>Dados do live blog oficial, com categorias, indicados, créditos, IDs do Spotify e previews disponíveis. Este é um retrato das publicações até 16 de novembro de 2026, às 13h47 UTC.</p>
+<dl><div><dt>Categorias publicadas</dt><dd>98</dd></div><div><dt>Indicações</dt><dd>516</dd></div><div><dt>Indicações com ID confirmado</dt><dd>388</dd></div><div><dt>Indicações com URL de preview</dt><dd>302</dd></div></dl>
+<nav aria-label="Arquivos JSON"><a href="grammy-2027-nominations.json">Abrir JSON completo ↗</a><a href="grammy-2027-spotify-pendencias.json">Abrir pendências do Spotify ↗</a></nav>
+<section><h2>Como usar os dados</h2><p>O array <code>categories</code> contém as categorias. Cada categoria tem seu array <code>nominees</code>, com os indicados e seus metadados.</p><ul><li><code>spotify_id</code> e <code>spotify_type</code>: identificação da faixa, álbum ou artista.</li><li><code>preview_track_id</code> e <code>preview_url</code>: faixa selecionada e prévia disponível.</li><li><code>preview_selection</code>: informa quando a prévia representa um álbum, artista ou obra inscrita.</li><li><code>spotify_status</code>: correspondência confirmada, pendente ou categoria tratada separadamente.</li></ul><p>102 indicações têm ID pendente, marcado como <code>null</code>. Outras 26 são de profissionais, filmes ou audiolivros. Previews podem mudar ou ficar indisponíveis conforme o país e o momento.</p></section>
+<section><h2>Fonte e atualização</h2><p>Fonte: <a href="https://www.grammy.com/live-blog/">live blog oficial do Grammy</a>. A coleta não é atualizada automaticamente. Data da coleta, fontes e situação de cada correspondência estão incluídas no JSON.</p></section>
+<footer>Projeto independente · <a href="https://github.com/marinellibr/grammy27">Repositório no GitHub</a></footer>
+</main></body></html>
