@@ -124,3 +124,24 @@ test('story artwork URLs are verified media metadata and do not include unsafe s
     assert.ok(nominee.artwork_source_url.startsWith('https://open.spotify.com/'));
   }
 });
+
+test('the approved Main ballot contains exactly 30 requested categories in descending official order', () => {
+  const config = JSON.parse(readFileSync(new URL('../public/ballot-config.json', import.meta.url)));
+  const main = categoriesForMode(categories, 'main', config);
+  const expected = [83, 81, 80, 79, 78, 77, 76, 68, 63, 62, 30, 29, 26, 24, 20, 18, 17, 14, 13, 12, 11, 10, 8, 7, 6, 5, 4, 3, 2, 1];
+  assert.deepEqual(main.map(category => category.official_number), expected);
+  assert.equal(categoriesForMode(categories, 'full', config).length, 100);
+  assert.equal(getPicks(main, Object.fromEntries(main.map(category => [category.id, 0]))).length, 30);
+});
+
+test('Producer and Songwriter of the Year each have one track example per nominee from an official submitted work', () => {
+  for (const category of data.categories.filter(category => [5, 6].includes(category.official_number))) {
+    assert.equal(category.nominees.length, 5);
+    for (const nominee of category.nominees) {
+      assert.equal(getEmbed(nominee, category.name).type, 'track');
+      assert.ok(nominee.preview_example_title);
+      assert.ok(nominee.submitted_works.some(work => work.title === nominee.preview_example_work));
+      assert.equal(nominee.preview_selection, 'submitted_work_example');
+    }
+  }
+});

@@ -54,12 +54,9 @@ try {
   const lineupContext = await browser.newContext({ viewport: { width: 1440, height: 1000 }, ignoreHTTPSErrors: true });
   await lineupContext.route('**/ballot-config.json', route => route.fulfill({ contentType: 'application/json', body: JSON.stringify({ mainCategoryIds: data.categories.slice(0, 18).map(category => category.id) }) }));
   const lineup = await lineupContext.newPage(); await lineup.goto(origin);
-  await lineup.getByRole('button', { name: 'View all categories', exact: true }).waitFor();
-  assert.ok((await lineup.locator('.main-lineup').boundingBox()).height <= 66);
-  assert.match(await lineup.locator('.main-lineup').innerText(), /Record Of The Year/);
-  await lineup.getByRole('button', { name: 'View all categories', exact: true }).click();
-  assert.equal(await lineup.locator('.main-lineup-list li').count(), 18);
-  await lineup.keyboard.press('Escape');
+  await lineup.locator('.main-mode-card .mode-description').waitFor();
+  assert.ok((await lineup.locator('.main-mode-card .mode-description').innerText()).length < 120);
+  assert.equal(await lineup.getByRole('button', { name: 'View all categories', exact: true }).count(), 0);
   for (const width of [320, 390, 768, 1440]) {
     await lineup.setViewportSize({ width, height: 900 });
     assert.equal(await lineup.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
@@ -80,5 +77,5 @@ try {
   await fallback.locator('.artwork-notice').waitFor();
   await saveImage(fallback, 'qa/story-artwork-fallback.png');
   await fallbackContext.close();
-  console.log('PASS: Main/Custom/Full order, full-album 352px players, real Spotify album covers in light/dark PNGs, compact 18-category description, full lineup dialog, responsive widths, and successful PNG export when artwork is blocked.');
+  console.log('PASS: Main/Custom/Full order, full-album 352px players, real Spotify album covers in light/dark PNGs, compact generic Main description, responsive widths, and successful PNG export when artwork is blocked.');
 } finally { await browser.close(); }

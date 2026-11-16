@@ -12,6 +12,10 @@ export function categoriesForMode(categories, mode, config, customCategoryIds = 
   if (mode !== 'main' && mode !== 'custom') return categories;
   const selectedIds = mode === 'custom' ? customCategoryIds : config.mainCategoryIds;
   const ids = new Set(Array.isArray(selectedIds) ? selectedIds : []);
+  if (mode === 'main') {
+    const byId = new Map(categories.map(category => [category.id, category]));
+    return [...ids].map(id => byId.get(id)).filter(Boolean);
+  }
   return categories.filter(category => ids.has(category.id));
 }
 
@@ -63,12 +67,12 @@ export function getYouTubeVideo(nominee) {
   return { id, url: `https://www.youtube.com/watch?v=${id}`, embedUrl: `https://www.youtube-nocookie.com/embed/${id}?rel=0&playsinline=1` };
 }
 
-export function readSaved(categories) {
+export function readSaved(categories, defaultMode = 'full') {
   let saved = {};
   try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}') || {}; } catch { /* A ballot also works without storage. */ }
   return {
     choices: validChoices(saved.choices, categories),
-    mode: ['main', 'custom'].includes(saved.mode) ? saved.mode : 'full',
+    mode: ['main', 'custom', 'full'].includes(saved.mode) ? saved.mode : defaultMode,
     customCategoryIds: validCustomCategories(saved.customCategoryIds, categories),
     autoAdvance: saved.autoAdvance === true,
     cursor: typeof saved.cursor === 'string' ? saved.cursor : null,

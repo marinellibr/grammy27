@@ -1,3 +1,34 @@
 {
-  "mainCategoryIds": []
+  "mainCategoryIds": [
+    "best-album-cover",
+    "best-music-film",
+    "best-music-video",
+    "best-song-written-for-visual-media",
+    "best-score-soundtrack-for-video-games-and-other-interactive-media",
+    "best-score-soundtrack-for-visual-media-includes-film-and-television",
+    "best-compilation-soundtrack-for-visual-media",
+    "best-global-music-performance",
+    "best-latin-pop-album",
+    "best-latin-song",
+    "best-rap-album",
+    "best-rap-song",
+    "best-rb-album",
+    "best-rb-song",
+    "best-alternative-music-album",
+    "best-rock-album",
+    "best-rock-song",
+    "best-remixed-recording",
+    "best-dance-electronic-album",
+    "best-dance-pop-recording",
+    "best-dance-electronic-recording",
+    "best-pop-vocal-album",
+    "best-pop-duo-group-performance",
+    "best-pop-solo-performance",
+    "songwriter-of-the-year-non-classical",
+    "producer-of-the-year-non-classical",
+    "best-new-artist",
+    "song-of-the-year",
+    "album-of-the-year",
+    "record-of-the-year"
+  ]
 }

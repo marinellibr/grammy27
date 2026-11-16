@@ -21,7 +21,8 @@ try {
   await page.getByRole('heading', { name: 'Your picks. Your spotlight.' }).waitFor();
   await noOverflow(); await screenshot('home-mobile-light');
   await page.locator('.mode-card:has(input[value="main"]) .mode-choice').click();
-  assert.equal(await page.getByRole('button', { name: 'Lineup coming soon' }).isDisabled(), true);
+  assert.equal(await page.locator('.main-mode-card .pill').innerText(), '30 categories');
+  assert.equal(await page.getByRole('button', { name: 'Let’s make some picks' }).isEnabled(), true);
   await page.locator('.mode-card:has(input[value="full"])').click();
   await page.getByRole('switch', { name: 'Dark mode' }).click();
   assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark');

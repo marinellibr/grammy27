@@ -19,7 +19,7 @@
 /* Official music videos use a responsive YouTube player, independently of voting controls. */
 .youtube-frame{overflow:hidden;border-radius:9px;background:#080808}.youtube-frame iframe{display:block;width:100%;aspect-ratio:16/9;min-height:200px;border:0}.music-video-preview .unavailable-preview{margin:0}.music-video-preview .spotify-link-row{min-height:28px;font-size:10px}
 
-/* Ballot modes stay compact, with the complete main lineup available on demand. */
-.mode-choice{display:flex;flex-direction:column;flex:1;cursor:pointer;min-width:0}.main-lineup{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden;max-height:5.4em}.lineup-button{display:inline-flex;align-items:center;gap:5px;border:0;background:none;color:var(--gold);font:inherit;font-size:10px;padding:4px 0;min-height:24px}.lineup-button:hover{text-decoration:underline}.main-lineup-list{margin:20px 0 0;padding-left:18px;font-size:12px;line-height:1.75;color:var(--ink)}.main-lineup-list li+li{margin-top:8px}.artwork-notice{color:var(--muted);display:inline-block;margin-bottom:4px}
+/* Ballot modes stay compact, with a generic Main description. */
+.mode-choice{display:flex;flex-direction:column;flex:1;cursor:pointer;min-width:0}.artwork-notice{color:var(--muted);display:inline-block;margin-bottom:4px}
 @media(min-width:620px){.custom-mode-card{grid-column:auto}.full-mode-card{grid-column:1/-1}}
 @media(min-width:900px){.full-mode-card{grid-column:auto}}

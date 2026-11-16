@@ -865,11 +865,15 @@
           "spotify_status": "not_applicable_person_category",
           "preview_track_id": "2itxcGh2MqEGswuXdeRlLL",
           "preview_url": "https://p.scdn.co/mp3-preview/536d94cb845e02c9d53d222a4d85ecce90882c12",
-          "preview_selection": "first_matched_submitted_work",
+          "preview_selection": "submitted_work_example",
           "nomination_source_url": "https://www.grammy.com/artists/tony-berg/54877/",
           "artwork_url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0225a647ace83ba32770ab5d0f",
           "artwork_kind": "album_cover",
-          "artwork_source_url": "https://open.spotify.com/embed/album/2NSzwyYvQvdOQAoEjrlw9c"
+          "artwork_source_url": "https://open.spotify.com/embed/album/2NSzwyYvQvdOQAoEjrlw9c",
+          "preview_example_title": "The Outside",
+          "preview_example_artist": "Phoebe Bridgers",
+          "preview_example_work": "Lost Weekend",
+          "preview_example_work_type": "album"
         },
         {
           "title": null,
@@ -901,10 +905,14 @@
           "spotify_status": "not_applicable_person_category",
           "preview_track_id": "7utED0KJFDNKvCdVZmHHKa",
           "preview_url": "https://p.scdn.co/mp3-preview/b33546b226b915c35bcad51f3a030f14c6d0c11e",
-          "preview_selection": "first_matched_submitted_work",
+          "preview_selection": "submitted_work_example",
           "artwork_url": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02a5a8a44477b56868b833f337",
           "artwork_kind": "album_cover",
-          "artwork_source_url": "https://open.spotify.com/embed/track/7utED0KJFDNKvCdVZmHHKa"
+          "artwork_source_url": "https://open.spotify.com/embed/track/7utED0KJFDNKvCdVZmHHKa",
+          "preview_example_title": "Reach Out",
+          "preview_example_artist": "Victoria Monét",
+          "preview_example_work": "Reach Out",
+          "preview_example_work_type": "track"
         },
         {
           "title": null,
@@ -926,12 +934,19 @@
           "spotify_type": null,
           "spotify_url": null,
           "spotify_status": "not_applicable_person_category",
-          "preview_track_id": null,
-          "preview_url": null,
+          "preview_track_id": "1dp0MRcrgCxEESP1LrF2yA",
+          "preview_url": "https://p.scdn.co/mp3-preview/65e4bc1012d0a42f7b67e377fdd7fdda959710e1",
           "nomination_source_url": "https://www.grammy.com/artists/noah-goldstein/16747/",
           "artwork_url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0293ee2e2f2dfb7de9befcc164",
           "artwork_kind": "album_cover",
-          "artwork_source_url": "https://open.spotify.com/embed/album/3SUEJULSGgBDG1j4GQhfYY"
+          "artwork_source_url": "https://open.spotify.com/embed/album/3SUEJULSGgBDG1j4GQhfYY",
+          "preview_track_title": "Sexo, Violencia y Llantas",
+          "preview_verified_source": "https://open.spotify.com/embed/album/3SUEJULSGgBDG1j4GQhfYY",
+          "preview_example_title": "Sexo, Violencia y Llantas",
+          "preview_example_artist": "ROSALÍA",
+          "preview_example_work": "LUX",
+          "preview_example_work_type": "album",
+          "preview_selection": "submitted_work_example"
         },
         {
           "title": null,
@@ -953,13 +968,19 @@
           "spotify_type": null,
           "spotify_url": null,
           "spotify_status": "not_applicable_person_category",
-          "preview_track_id": "6JU5MwGlyanwgR6y4NW79R",
-          "preview_url": "https://p.scdn.co/mp3-preview/5890e32aa52a29da71b6eb5c8920a484291aaa22",
-          "preview_selection": "first_matched_submitted_work",
+          "preview_track_id": "0nqwiHWVxo4bDEsHIrFoi2",
+          "preview_url": "https://p.scdn.co/mp3-preview/fd264183941604392e591a1834fca3818a4236bd",
+          "preview_selection": "submitted_work_example",
           "nomination_source_url": "https://www.grammy.com/artists/miranda-lambert/4851/",
           "artwork_url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e020c20b697b7cc3bfe3eb954bc",
           "artwork_kind": "album_cover",
-          "artwork_source_url": "https://open.spotify.com/embed/album/14l4mGBY4BJYi5TNJk9kV6"
+          "artwork_source_url": "https://open.spotify.com/embed/album/14l4mGBY4BJYi5TNJk9kV6",
+          "preview_example_title": "Dandelion",
+          "preview_example_artist": "Ella Langley",
+          "preview_example_work": "Dandelion",
+          "preview_example_work_type": "album",
+          "preview_track_title": "Dandelion",
+          "preview_verified_source": "https://open.spotify.com/embed/album/14l4mGBY4BJYi5TNJk9kV6"
         },
         {
           "title": null,
@@ -1047,11 +1068,15 @@
           "spotify_status": "not_applicable_person_category",
           "preview_track_id": "5PspYmmQ8nKESNTcBY2LlX",
           "preview_url": "https://p.scdn.co/mp3-preview/204b52ea8620c0b477f69b25b36e7ee1e34aadfb",
-          "preview_selection": "first_matched_submitted_work",
+          "preview_selection": "submitted_work_example",
           "nomination_source_url": "https://www.grammy.com/artists/divinity-roxx/",
           "artwork_url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02c35881d2aa600c3d1a08dfbb",
           "artwork_kind": "album_cover",
-          "artwork_source_url": "https://open.spotify.com/embed/album/16dAl7WPULgJnqi536jTjh"
+          "artwork_source_url": "https://open.spotify.com/embed/album/16dAl7WPULgJnqi536jTjh",
+          "preview_example_title": "Click Clack Symphony. (feat. Hans Zimmer)",
+          "preview_example_artist": "RAYE, Hans Zimmer",
+          "preview_example_work": "Click Clack Symphony.",
+          "preview_example_work_type": "track"
         }
       ],
       "official_number": 5,
@@ -1150,11 +1175,15 @@
           "spotify_status": "not_applicable_person_category",
           "preview_track_id": "3fRCAPMMZ8l8P9YKI6OCzD",
           "preview_url": "https://p.scdn.co/mp3-preview/4acb20a0f0bbca4a57a351dd94674a27b8c7714e",
-          "preview_selection": "first_matched_submitted_work",
+          "preview_selection": "submitted_work_example",
           "nomination_source_url": "https://www.grammy.com/artists/amy-allen/37881/",
           "artwork_url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e026949b83f85d782b21ce70583",
           "artwork_kind": "album_cover",
-          "artwork_source_url": "https://open.spotify.com/embed/album/18qJgKH8dyYe2RRp6TbnNY"
+          "artwork_source_url": "https://open.spotify.com/embed/album/18qJgKH8dyYe2RRp6TbnNY",
+          "preview_example_title": "drop dead",
+          "preview_example_artist": "Olivia Rodrigo",
+          "preview_example_work": "drop dead",
+          "preview_example_work_type": "track"
         },
         {
           "title": null,
@@ -1242,11 +1271,15 @@
           "spotify_status": "not_applicable_person_category",
           "preview_track_id": "2MaOTgQbuYGaLzffoyh2yH",
           "preview_url": "https://p.scdn.co/mp3-preview/eaab92d1f39f4ac134256fff32f6d42013c83c74",
-          "preview_selection": "first_matched_submitted_work",
+          "preview_selection": "submitted_work_example",
           "nomination_source_url": "https://www.grammy.com/artists/edgar-barrera/18854/",
           "artwork_url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e028ff0dc6e03af2b4b83e9e274",
           "artwork_kind": "album_cover",
-          "artwork_source_url": "https://open.spotify.com/embed/album/7aTDbTfkSxsYEipu8Z4TNl"
+          "artwork_source_url": "https://open.spotify.com/embed/album/7aTDbTfkSxsYEipu8Z4TNl",
+          "preview_example_title": "7-3",
+          "preview_example_artist": "Peso Pluma, Tito Double P",
+          "preview_example_work": "7-3",
+          "preview_example_work_type": "track"
         },
         {
           "title": null,
@@ -1334,11 +1367,15 @@
           "spotify_status": "not_applicable_person_category",
           "preview_track_id": "5PspYmmQ8nKESNTcBY2LlX",
           "preview_url": "https://p.scdn.co/mp3-preview/204b52ea8620c0b477f69b25b36e7ee1e34aadfb",
-          "preview_selection": "first_matched_submitted_work",
+          "preview_selection": "submitted_work_example",
           "nomination_source_url": "https://www.grammy.com/artists/rachel-keen/58098/",
           "artwork_url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02c35881d2aa600c3d1a08dfbb",
           "artwork_kind": "album_cover",
-          "artwork_source_url": "https://open.spotify.com/embed/album/16dAl7WPULgJnqi536jTjh"
+          "artwork_source_url": "https://open.spotify.com/embed/album/16dAl7WPULgJnqi536jTjh",
+          "preview_example_title": "Click Clack Symphony. (feat. Hans Zimmer)",
+          "preview_example_artist": "RAYE, Hans Zimmer",
+          "preview_example_work": "Click Clack Symphony.",
+          "preview_example_work_type": "track"
         },
         {
           "title": null,
@@ -1386,11 +1423,15 @@
           "spotify_status": "not_applicable_person_category",
           "preview_track_id": "4Rin9yz8fuTDI0fLGqngFT",
           "preview_url": "https://p.scdn.co/mp3-preview/62f32a83d528eb5d7398628131b206ca0953299e",
-          "preview_selection": "first_matched_submitted_work",
+          "preview_selection": "submitted_work_example",
           "nomination_source_url": "https://www.grammy.com/artists/lindsey-stirling/",
           "artwork_url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e020c20b697b7cc3bfe3eb954bc",
           "artwork_kind": "album_cover",
-          "artwork_source_url": "https://open.spotify.com/embed/album/14l4mGBY4BJYi5TNJk9kV6"
+          "artwork_source_url": "https://open.spotify.com/embed/album/14l4mGBY4BJYi5TNJk9kV6",
+          "preview_example_title": "Choosin' Texas",
+          "preview_example_artist": "Ella Langley",
+          "preview_example_work": "Choosin' Texas",
+          "preview_example_work_type": "track"
         },
         {
           "title": null,
@@ -1478,11 +1519,15 @@
           "spotify_status": "not_applicable_person_category",
           "preview_track_id": "52x2IlofSZnEEHE6ngVV7J",
           "preview_url": "https://p.scdn.co/mp3-preview/41db7281b2c0cdab261695e9f6fff877769851e3",
-          "preview_selection": "first_matched_submitted_work",
+          "preview_selection": "submitted_work_example",
           "nomination_source_url": "https://www.grammy.com/artists/theron-thomas/38509/",
           "artwork_url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02c77e367d5dfbefa2c42339fb",
           "artwork_kind": "album_cover",
-          "artwork_source_url": "https://open.spotify.com/embed/album/0XXkEYOyHM2Lpb09pME4rl"
+          "artwork_source_url": "https://open.spotify.com/embed/album/0XXkEYOyHM2Lpb09pME4rl",
+          "preview_example_title": "Be Good",
+          "preview_example_artist": "Buju Banton",
+          "preview_example_work": "Be Good",
+          "preview_example_work_type": "track"
         }
       ],
       "official_number": 6,
@@ -13340,7 +13385,7 @@
   ],
   "spotify_summary": {
     "verified_nominations": 403,
-    "with_preview_url": 312,
+    "with_preview_url": 313,
     "unresolved_nominations": 97,
     "not_applicable_nominations": 26,
     "statuses": {

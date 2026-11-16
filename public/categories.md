@@ -2,7 +2,7 @@
 
 Source: https://www.grammy.com/news/2027-grammys-full-nominations-full-winners-nominees-list/
 
-Full Experience currently contains all categories. Main Categories is awaiting selection.
+Full Experience contains all 100 categories. Main Categories contains 30 categories, in this order: 83, 81, 80, 79, 78, 77, 76, 68, 63, 62, 30, 29, 26, 24, 20, 18, 17, 14, 13, 12, 11, 10, 8, 7, 6, 5, 4, 3, 2, 1.
 
 
 ## General Field

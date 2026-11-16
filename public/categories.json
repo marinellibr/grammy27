@@ -3,707 +3,939 @@
   "updated_at": "2026-11-16T16:15:31.138898+00:00",
   "source_url": "https://www.grammy.com/news/2027-grammys-full-nominations-full-winners-nominees-list/",
   "categories_count": 100,
-  "classification_status": "Awaiting user selection for Full Experience and Main Categories. Full Experience currently includes all categories.",
+  "classification_status": "Main Categories approved: 30 categories in descending official-number order. Full Experience includes all 100 categories.",
   "categories": [
     {
       "number": 1,
       "id": "record-of-the-year",
       "name": "Record Of The Year",
       "field": "General Field",
-      "nominees_count": 8
+      "nominees_count": 8,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 2,
       "id": "album-of-the-year",
       "name": "Album Of The Year",
       "field": "General Field",
-      "nominees_count": 8
+      "nominees_count": 8,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 3,
       "id": "song-of-the-year",
       "name": "Song Of The Year",
       "field": "General Field",
-      "nominees_count": 8
+      "nominees_count": 8,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 4,
       "id": "best-new-artist",
       "name": "Best New Artist",
       "field": "General Field",
-      "nominees_count": 8
+      "nominees_count": 8,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 5,
       "id": "producer-of-the-year-non-classical",
       "name": "Producer Of The Year, Non-Classical",
       "field": "General Field",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 6,
       "id": "songwriter-of-the-year-non-classical",
       "name": "Songwriter Of The Year, Non-Classical",
       "field": "General Field",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 7,
       "id": "best-pop-solo-performance",
       "name": "Best Pop Solo Performance",
       "field": "Field 1: Pop & Dance/Electronic",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 8,
       "id": "best-pop-duo-group-performance",
       "name": "Best Pop Duo/Group Performance",
       "field": "Field 1: Pop & Dance/Electronic",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 9,
       "id": "best-asian-pop-music-performance",
       "name": "Best Asian Pop Music Performance",
       "field": "Field 1: Pop & Dance/Electronic",
-      "nominees_count": 6
+      "nominees_count": 6,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 10,
       "id": "best-pop-vocal-album",
       "name": "Best Pop Vocal Album",
       "field": "Field 1: Pop & Dance/Electronic",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 11,
       "id": "best-dance-electronic-recording",
       "name": "Best Dance/Electronic Recording",
       "field": "Field 1: Pop & Dance/Electronic",
-      "nominees_count": 6
+      "nominees_count": 6,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 12,
       "id": "best-dance-pop-recording",
       "name": "Best Dance Pop Recording",
       "field": "Field 1: Pop & Dance/Electronic",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 13,
       "id": "best-dance-electronic-album",
       "name": "Best Dance/Electronic Album",
       "field": "Field 1: Pop & Dance/Electronic",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 14,
       "id": "best-remixed-recording",
       "name": "Best Remixed Recording",
       "field": "Field 1: Pop & Dance/Electronic",
-      "nominees_count": 6
+      "nominees_count": 6,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 15,
       "id": "best-rock-performance",
       "name": "Best Rock Performance",
       "field": "Field 2: Rock, Metal & Alternative Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 16,
       "id": "best-metal-performance",
       "name": "Best Metal Performance",
       "field": "Field 2: Rock, Metal & Alternative Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 17,
       "id": "best-rock-song",
       "name": "Best Rock Song",
       "field": "Field 2: Rock, Metal & Alternative Music",
-      "nominees_count": 7
+      "nominees_count": 7,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 18,
       "id": "best-rock-album",
       "name": "Best Rock Album",
       "field": "Field 2: Rock, Metal & Alternative Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 19,
       "id": "best-alternative-music-performance",
       "name": "Best Alternative Music Performance",
       "field": "Field 2: Rock, Metal & Alternative Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 20,
       "id": "best-alternative-music-album",
       "name": "Best Alternative Music Album",
       "field": "Field 2: Rock, Metal & Alternative Music",
-      "nominees_count": 6
+      "nominees_count": 6,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 21,
       "id": "best-rb-solo-performance",
       "name": "Best R&B Solo Performance",
       "field": "Field 3: R&B, Rap & Spoken Word Poetry",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 22,
       "id": "best-rb-collaboration-or-duo-group-performance",
       "name": "Best R&B Collaboration or Duo/Group Performance",
       "field": "Field 3: R&B, Rap & Spoken Word Poetry",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 23,
       "id": "best-traditional-rb-performance",
       "name": "Best Traditional R&B Performance",
       "field": "Field 3: R&B, Rap & Spoken Word Poetry",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 24,
       "id": "best-rb-song",
       "name": "Best R&B Song",
       "field": "Field 3: R&B, Rap & Spoken Word Poetry",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 25,
       "id": "best-progressive-rb-album",
       "name": "Best Progressive R&B Album",
       "field": "Field 3: R&B, Rap & Spoken Word Poetry",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 26,
       "id": "best-rb-album",
       "name": "Best R&B Album",
       "field": "Field 3: R&B, Rap & Spoken Word Poetry",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 27,
       "id": "best-rap-performance",
       "name": "Best Rap Performance",
       "field": "Field 3: R&B, Rap & Spoken Word Poetry",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 28,
       "id": "best-melodic-rap-performance",
       "name": "Best Melodic Rap Performance",
       "field": "Field 3: R&B, Rap & Spoken Word Poetry",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 29,
       "id": "best-rap-song",
       "name": "Best Rap Song",
       "field": "Field 3: R&B, Rap & Spoken Word Poetry",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 30,
       "id": "best-rap-album",
       "name": "Best Rap Album",
       "field": "Field 3: R&B, Rap & Spoken Word Poetry",
-      "nominees_count": 6
+      "nominees_count": 6,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 31,
       "id": "best-spoken-word-poetry-album",
       "name": "Best Spoken Word Poetry Album",
       "field": "Field 3: R&B, Rap & Spoken Word Poetry",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 32,
       "id": "best-jazz-performance",
       "name": "Best Jazz Performance",
       "field": "Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 33,
       "id": "best-jazz-vocal-album",
       "name": "Best Jazz Vocal Album",
       "field": "Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 34,
       "id": "best-jazz-instrumental-album",
       "name": "Best Jazz Instrumental Album",
       "field": "Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 35,
       "id": "best-large-jazz-ensemble-album",
       "name": "Best Large Jazz Ensemble Album",
       "field": "Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 36,
       "id": "best-latin-jazz-album",
       "name": "Best Latin Jazz Album",
       "field": "Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 37,
       "id": "best-alternative-jazz-album",
       "name": "Best Alternative Jazz Album",
       "field": "Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 38,
       "id": "best-traditional-pop-vocal-performance",
       "name": "Best Traditional Pop Vocal Performance",
       "field": "Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 39,
       "id": "best-traditional-pop-vocal-album",
       "name": "Best Traditional Pop Vocal Album",
       "field": "Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 40,
       "id": "best-contemporary-instrumental-album",
       "name": "Best Contemporary Instrumental Album",
       "field": "Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 41,
       "id": "best-musical-theater-album",
       "name": "Best Musical Theater Album",
       "field": "Field 4: Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 42,
       "id": "best-country-solo-performance",
       "name": "Best Country Solo Performance",
       "field": "Field 5: Country & American Roots Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 43,
       "id": "best-country-duo-group-performance",
       "name": "Best Country Duo/Group Performance",
       "field": "Field 5: Country & American Roots Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 44,
       "id": "best-country-song",
       "name": "Best Country Song",
       "field": "Field 5: Country & American Roots Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 45,
       "id": "best-traditional-country-album",
       "name": "Best Traditional Country Album",
       "field": "Field 5: Country & American Roots Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 46,
       "id": "best-contemporary-country-album",
       "name": "Best Contemporary Country Album",
       "field": "Field 5: Country & American Roots Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 47,
       "id": "best-american-roots-performance",
       "name": "Best American Roots Performance",
       "field": "Field 5: Country & American Roots Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 48,
       "id": "best-americana-performance",
       "name": "Best Americana Performance",
       "field": "Field 5: Country & American Roots Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 49,
       "id": "best-american-roots-song",
       "name": "Best American Roots Song",
       "field": "Field 5: Country & American Roots Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 50,
       "id": "best-americana-album",
       "name": "Best Americana Album",
       "field": "Field 5: Country & American Roots Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 51,
       "id": "best-bluegrass-album",
       "name": "Best Bluegrass Album",
       "field": "Field 5: Country & American Roots Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 52,
       "id": "best-traditional-blues-album",
       "name": "Best Traditional Blues Album",
       "field": "Field 5: Country & American Roots Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 53,
       "id": "best-contemporary-blues-album",
       "name": "Best Contemporary Blues Album",
       "field": "Field 5: Country & American Roots Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 54,
       "id": "best-traditional-folk-album",
       "name": "Best Traditional Folk Album",
       "field": "Field 5: Country & American Roots Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 55,
       "id": "best-contemporary-folk-album",
       "name": "Best Contemporary Folk Album",
       "field": "Field 5: Country & American Roots Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 56,
       "id": "best-regional-roots-music-album",
       "name": "Best Regional Roots Music Album",
       "field": "Field 5: Country & American Roots Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 57,
       "id": "best-gospel-performance-song",
       "name": "Best Gospel Performance/Song",
       "field": "Field 6: Gospel & Contemporary Christian Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 58,
       "id": "best-contemporary-christian-music-performance-song",
       "name": "Best Contemporary Christian Music Performance/Song",
       "field": "Field 6: Gospel & Contemporary Christian Music",
-      "nominees_count": 6
+      "nominees_count": 6,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 59,
       "id": "best-gospel-album",
       "name": "Best Gospel Album",
       "field": "Field 6: Gospel & Contemporary Christian Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 60,
       "id": "best-contemporary-christian-music-album",
       "name": "Best Contemporary Christian Music Album",
       "field": "Field 6: Gospel & Contemporary Christian Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 61,
       "id": "best-roots-gospel-album",
       "name": "Best Roots Gospel Album",
       "field": "Field 6: Gospel & Contemporary Christian Music",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 62,
       "id": "best-latin-song",
       "name": "Best Latin Song",
       "field": "Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 63,
       "id": "best-latin-pop-album",
       "name": "Best Latin Pop Album",
       "field": "Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 64,
       "id": "best-musica-urbana-album",
       "name": "Best Música Urbana Album",
       "field": "Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",
-      "nominees_count": 6
+      "nominees_count": 6,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 65,
       "id": "best-latin-rock-or-alternative-album",
       "name": "Best Latin Rock Or Alternative Album",
       "field": "Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 66,
       "id": "best-musica-mexicana-album-including-tejano",
       "name": "Best Música Mexicana Album (Including Tejano)",
       "field": "Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 67,
       "id": "best-tropical-latin-album",
       "name": "Best Tropical Latin Album",
       "field": "Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 68,
       "id": "best-global-music-performance",
       "name": "Best Global Music Performance",
       "field": "Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 69,
       "id": "best-african-music-performance",
       "name": "Best African Music Performance",
       "field": "Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 70,
       "id": "best-global-music-album",
       "name": "Best Global Music Album",
       "field": "Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 71,
       "id": "best-reggae-album",
       "name": "Best Reggae Album",
       "field": "Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",
-      "nominees_count": 6
+      "nominees_count": 6,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 72,
       "id": "best-new-age-ambient-or-chant-album",
       "name": "Best New Age, Ambient, Or Chant Album",
       "field": "Field 7: Latin, Global, African, Reggae & New Age, Ambient, Or Chant",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 73,
       "id": "best-childrens-music-album",
       "name": "Best Children's Music Album",
       "field": "Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 74,
       "id": "best-comedy-album",
       "name": "Best Comedy Album",
       "field": "Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",
-      "nominees_count": 6
+      "nominees_count": 6,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 75,
       "id": "best-audio-book-narration-and-storytelling-recording",
       "name": "Best Audio Book, Narration, and Storytelling Recording",
       "field": "Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",
-      "nominees_count": 6
+      "nominees_count": 6,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 76,
       "id": "best-compilation-soundtrack-for-visual-media",
       "name": "Best Compilation Soundtrack For Visual Media",
       "field": "Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 77,
       "id": "best-score-soundtrack-for-visual-media-includes-film-and-television",
       "name": "Best Score Soundtrack For Visual Media (Includes Film And Television)",
       "field": "Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 78,
       "id": "best-score-soundtrack-for-video-games-and-other-interactive-media",
       "name": "Best Score Soundtrack For Video Games and Other Interactive Media",
       "field": "Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 79,
       "id": "best-song-written-for-visual-media",
       "name": "Best Song Written For Visual Media",
       "field": "Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 80,
       "id": "best-music-video",
       "name": "Best Music Video",
       "field": "Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 81,
       "id": "best-music-film",
       "name": "Best Music Film",
       "field": "Field 8: Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 82,
       "id": "best-recording-package",
       "name": "Best Recording Package",
       "field": "Field 9: Package, Notes & Historical",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 83,
       "id": "best-album-cover",
       "name": "Best Album Cover",
       "field": "Field 9: Package, Notes & Historical",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": true
     },
     {
       "number": 84,
       "id": "best-album-notes",
       "name": "Best Album Notes",
       "field": "Field 9: Package, Notes & Historical",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 85,
       "id": "best-historical-album",
       "name": "Best Historical Album",
       "field": "Field 9: Package, Notes & Historical",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 86,
       "id": "best-engineered-album-non-classical",
       "name": "Best Engineered Album, Non-Classical",
       "field": "Field 10: Production, Engineering, Composition & Arrangement",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 87,
       "id": "best-engineered-album-classical",
       "name": "Best Engineered Album, Classical",
       "field": "Field 10: Production, Engineering, Composition & Arrangement",
-      "nominees_count": 6
+      "nominees_count": 6,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 88,
       "id": "producer-of-the-year-classical",
       "name": "Producer Of The Year, Classical",
       "field": "Field 10: Production, Engineering, Composition & Arrangement",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 89,
       "id": "best-immersive-audio-album",
       "name": "Best Immersive Audio Album",
       "field": "Field 10: Production, Engineering, Composition & Arrangement",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 90,
       "id": "best-instrumental-composition",
       "name": "Best Instrumental Composition",
       "field": "Field 10: Production, Engineering, Composition & Arrangement",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 91,
       "id": "best-arrangement-instrumental-or-a-cappella",
       "name": "Best Arrangement, Instrumental Or A Cappella",
       "field": "Field 10: Production, Engineering, Composition & Arrangement",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 92,
       "id": "best-arrangement-instruments-and-vocals",
       "name": "Best Arrangement, Instruments And Vocals",
       "field": "Field 10: Production, Engineering, Composition & Arrangement",
-      "nominees_count": 6
+      "nominees_count": 6,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 93,
       "id": "best-orchestral-performance",
       "name": "Best Orchestral Performance",
       "field": "Field 11: Classical",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 94,
       "id": "best-opera-recording",
       "name": "Best Opera Recording",
       "field": "Field 11: Classical",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 95,
       "id": "best-choral-performance",
       "name": "Best Choral Performance",
       "field": "Field 11: Classical",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 96,
       "id": "best-chamber-music-small-ensemble-performance",
       "name": "Best Chamber Music/Small Ensemble Performance",
       "field": "Field 11: Classical",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 97,
       "id": "best-classical-instrumental-solo",
       "name": "Best Classical Instrumental Solo",
       "field": "Field 11: Classical",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 98,
       "id": "best-classical-solo-vocal-album",
       "name": "Best Classical Solo Vocal Album",
       "field": "Field 11: Classical",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 99,
       "id": "best-classical-compendium",
       "name": "Best Classical Compendium",
       "field": "Field 11: Classical",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     },
     {
       "number": 100,
       "id": "best-contemporary-classical-composition",
       "name": "Best Contemporary Classical Composition",
       "field": "Field 11: Classical",
-      "nominees_count": 5
+      "nominees_count": 5,
+      "full_experience": true,
+      "main_categories": false
     }
+  ],
+  "mainCategoryIds": [
+    "best-album-cover",
+    "best-music-film",
+    "best-music-video",
+    "best-song-written-for-visual-media",
+    "best-score-soundtrack-for-video-games-and-other-interactive-media",
+    "best-score-soundtrack-for-visual-media-includes-film-and-television",
+    "best-compilation-soundtrack-for-visual-media",
+    "best-global-music-performance",
+    "best-latin-pop-album",
+    "best-latin-song",
+    "best-rap-album",
+    "best-rap-song",
+    "best-rb-album",
+    "best-rb-song",
+    "best-alternative-music-album",
+    "best-rock-album",
+    "best-rock-song",
+    "best-remixed-recording",
+    "best-dance-electronic-album",
+    "best-dance-pop-recording",
+    "best-dance-electronic-recording",
+    "best-pop-vocal-album",
+    "best-pop-duo-group-performance",
+    "best-pop-solo-performance",
+    "songwriter-of-the-year-non-classical",
+    "producer-of-the-year-non-classical",
+    "best-new-artist",
+    "song-of-the-year",
+    "album-of-the-year",
+    "record-of-the-year"
   ]
 }
