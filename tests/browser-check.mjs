@@ -60,7 +60,7 @@ try {
   assert.match(await page.locator('.summary-card').first().innerText(), /Dandelion/);
   await page.getByRole('button', { name: 'Create my Instagram story', exact: true }).click();
   await page.locator('.story-preview').waitFor({ timeout: 30000 });
-  assert.match(await page.locator('.story-pagination').innerText(), /Story 1 of 17/);
+  assert.match(await page.locator('.story-pagination').innerText(), /Story 1 of 12/);
   const img = await page.locator('.story-preview').evaluate(image => ({ width: image.naturalWidth, height: image.naturalHeight }));
   assert.deepEqual(img, { width: 1080, height: 1920 });
   await screenshot('story-mobile-light');
@@ -71,9 +71,9 @@ try {
   const png = await readFile(await download.path());
   assert.equal(png.readUInt32BE(16), 1080); assert.equal(png.readUInt32BE(20), 1920);
   const zipWait = page.waitForEvent('download');
-  await page.getByRole('button', { name: 'Download all 17 stories (ZIP)', exact: true }).click();
+  await page.getByRole('button', { name: 'Download all 12 stories (ZIP)', exact: true }).click();
   const archive = await zipWait, files = unzipSync(new Uint8Array(await readFile(await archive.path())));
-  assert.equal(Object.keys(files).length, 17);
+  assert.equal(Object.keys(files).length, 12);
   for (const bytes of Object.values(files)) { const image = Buffer.from(bytes); assert.equal(image.readUInt32BE(16), 1080); assert.equal(image.readUInt32BE(20), 1920); }
   await page.keyboard.press('Escape');
   await page.getByRole('button', { name: 'Start a fresh ballot', exact: true }).click();
@@ -85,5 +85,5 @@ try {
   await page.getByRole('switch', { name: 'Dark mode' }).click();
   await screenshot('home-desktop-dark');
   assert.deepEqual(errors, []);
-  console.log('PASS: 100-category ballot, next/back, auto-advance, resume, main-mode placeholder, themes, summary editing, modal, PNG/17-image ZIP export, responsive widths, no JS errors. Spotify iframe URLs verified; playback isolated.');
+  console.log('PASS: 100-category ballot, next/back, auto-advance, resume, main-mode placeholder, themes, summary editing, modal, PNG/12-image ZIP export, responsive widths, no JS errors. Spotify iframe URLs verified; playback isolated.');
 } finally { await browser.close(); }

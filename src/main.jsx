@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { createRoot } from 'react-dom/client';
-import { STORAGE_KEY, orderCategories, categoriesForMode, getPicks, hasChoice, getEmbed, readSaved, canStartBallot, getYouTubeVideo, isAlbumCategory } from './ballot';
+import { STORAGE_KEY, orderCategories, categoriesForMode, getPicks, hasChoice, getEmbed, readSaved, canStartBallot, getYouTubeVideo, isAlbumCategory, groupCategories, storyPages } from './ballot';
 import { generateStories, downloadBlob, downloadAllStories } from './story';
 import './styles.css';
+import { countdown } from './countdown';
 
 function Icon({ name, size = 20, ...props }) {
   const paths = {
@@ -28,6 +29,12 @@ function Switch({ checked, onChange, label, id }) {
   return <button id={id} className="switch-control" type="button" role="switch" aria-checked={checked} onClick={() => onChange(!checked)}><span className={`switch-track ${checked ? 'on' : ''}`} aria-hidden="true"><span /></span><span>{label}</span></button>;
 }
 
+function Countdown() {
+  const [remaining, setRemaining] = useState(() => countdown());
+  useEffect(() => { const timer = setInterval(() => setRemaining(countdown()), 1000); return () => clearInterval(timer); }, []);
+  return <aside className="grammy-countdown" aria-label="Countdown to the Grammy Awards"><div className="countdown-inner"><div className="countdown-caption"><strong>{remaining.ended ? 'The wait is over' : 'Until Grammy night'}</strong><time dateTime="2027-02-08T00:00:00Z">Feb 7, 2027 · 4 PM PT / 7 PM ET</time></div><div className="countdown-digits" role="timer" aria-live="off">{['days', 'hours', 'minutes', 'seconds'].map(unit => <span key={unit}><b>{String(remaining[unit]).padStart(2, '0')}</b><small>{unit}</small></span>)}</div></div></aside>;
+}
+
 function App() {
   const [loaded, setLoaded] = useState(null), [error, setError] = useState('');
   useEffect(() => {
@@ -46,6 +53,7 @@ function BallotApp({ data, config }) {
   const [saved] = useState(() => readSaved(data.categories, config.mainCategoryIds?.length ? 'main' : 'full'));
   const [screen, setScreen] = useState('home'), [mode, setMode] = useState(saved.mode), [choices, setChoices] = useState(saved.choices), [autoAdvance, setAutoAdvance] = useState(saved.autoAdvance);
   const [customCategoryIds, setCustomCategoryIds] = useState(saved.customCategoryIds), [categoryQuery, setCategoryQuery] = useState('');
+  const [closedFields, setClosedFields] = useState([]);
   const [index, setIndex] = useState(0), [editing, setEditing] = useState(false), [theme, setTheme] = useState(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
   const [storageWarning, setStorageWarning] = useState(false), [storyOpen, setStoryOpen] = useState(false), [restartOpen, setRestartOpen] = useState(false);
   const heading = useRef(null), pendingAdvance = useRef(null);
@@ -102,12 +110,13 @@ function BallotApp({ data, config }) {
   function toggleCategory(id) {
     setCustomCategoryIds(current => current.includes(id) ? current.filter(value => value !== id) : [...current, id]);
   }
-  const visibleCategories = data.categories.filter(category => category.name.toLowerCase().includes(categoryQuery.trim().toLowerCase()));
+  const visibleCategories = data.categories.filter(category => `${category.name} ${category.field}`.toLowerCase().includes(categoryQuery.trim().toLowerCase()));
   const fullPicks = getPicks(data.categories, choices).length;
   const stageLabel = screen === 'summary' ? 'Your ballot' : screen === 'ballot' ? 'Make your picks' : screen === 'customize' ? 'Build your ballot' : 'The fan ballot';
 
   return <div className={`app ${screen === 'ballot' || screen === 'customize' ? 'with-dock' : ''}`}>
     <a className="skip-link" href="#main">Skip to content</a>
+    <Countdown />
     <header className="site-header"><div className="header-inner">
       <button className="brand" onClick={() => { clearTimeout(pendingAdvance.current); setScreen('home'); }} aria-label="Grammy 2027 home"><span className="brand-symbol"><Icon name="spark" size={23} /></span><span>GRAMMY<span className="brand-year">27</span></span></button>
       <span className="header-caption">{stageLabel}</span>
@@ -135,7 +144,12 @@ function BallotApp({ data, config }) {
         <div className="ballot-topline"><button className="text-button" onClick={() => setScreen('home')}><Icon name="back" size={16} /> Ballot versions</button><span>CUSTOM CATEGORIES</span></div>
         <section className="category-heading custom-heading"><p className="eyebrow">A BALLOT THAT SOUNDS LIKE YOU</p><h1 ref={heading} tabIndex="-1">Set your own stage.</h1><p>Pick the categories you want to vote in. Select at least two to get started.</p></section>
         <div className="category-picker-tools"><label className="category-search"><span>Find a category</span><input type="search" value={categoryQuery} onChange={event => setCategoryQuery(event.target.value)} placeholder="Search categories…" /></label><div className="category-bulk-actions"><button className="text-button" onClick={() => setCustomCategoryIds(data.categories.map(category => category.id))}>Select all {data.categories.length}</button><button className="text-button" disabled={!customCategoryIds.length} onClick={() => setCustomCategoryIds([])}>Clear selection</button></div></div>
-        <fieldset className="category-picker"><legend className="sr-only">Choose at least two categories for your custom ballot</legend>{visibleCategories.map(item => { const checked = customCategoryIds.includes(item.id); return <label key={item.id} className={`category-pick-card ${checked ? 'is-selected' : ''}`}><input type="checkbox" checked={checked} onChange={() => toggleCategory(item.id)} aria-label={item.name.replace(/\s*\(new for 2027\)/i, '')} /><span className="category-pick-check" aria-hidden="true">{checked && <Icon name="check" size={15} />}</span><span className="category-pick-copy"><span className="category-pick-name">{item.name.replace(/\s*\(new for 2027\)/i, '')}</span><span className="category-pick-count">{item.nominees.length} nominees</span></span></label>; })}</fieldset>
+        <div className="accordion-tools"><button className="text-button" onClick={() => setClosedFields([])}>Expand all</button><button className="text-button" onClick={() => { setCategoryQuery(''); setClosedFields(groupCategories(data.categories).map(group => group.field)); }}>Collapse all</button></div>
+        <div className="field-accordions">{groupCategories(visibleCategories).map((group, groupIndex) => {
+          const open = !!categoryQuery.trim() || !closedFields.includes(group.field);
+          const panelId = `field-panel-${groupIndex}`;
+          return <section className="field-accordion" key={group.field}><h2><button className="field-heading" aria-expanded={open} aria-controls={panelId} onClick={() => { if (categoryQuery.trim()) setCategoryQuery(''); setClosedFields(current => open ? [...new Set([...current, group.field])] : current.filter(field => field !== group.field)); }}><span>{group.label}<small>{group.categories.filter(item => customCategoryIds.includes(item.id)).length} of {group.categories.length} selected</small></span><span className="disclosure-mark" aria-hidden="true">{open ? '−' : '+'}</span></button></h2><div id={panelId} hidden={!open}><fieldset className="category-picker"><legend className="sr-only">Choose awards in {group.label}</legend>{group.categories.map(item => { const checked = customCategoryIds.includes(item.id); return <label key={item.id} className={`category-pick-card ${checked ? 'is-selected' : ''}`}><input type="checkbox" checked={checked} onChange={() => toggleCategory(item.id)} aria-label={item.name.replace(/\s*\(new for 2027\)/i, '')} /><span className="category-pick-check" aria-hidden="true">{checked && <Icon name="check" size={15} />}</span><span className="category-pick-copy"><span className="category-pick-name">{item.name.replace(/\s*\(new for 2027\)/i, '')}</span><span className="category-pick-count">{item.nominees.length} nominees</span></span></label>; })}</fieldset></div></section>;
+        })}</div>
         {!visibleCategories.length && <p className="category-empty" role="status">No categories match “{categoryQuery}”. Try another search.</p>}
         <div className="ballot-dock category-picker-dock"><div className="dock-inner"><p className="category-selection-status" role="status"><strong>{customCategoryIds.length} selected</strong><span>{customCategoryIds.length < 2 ? `Choose ${2 - customCategoryIds.length} more to continue` : 'Your custom ballot is ready'}</span></p><div className="dock-navigation"><button className="button secondary" onClick={() => setScreen('home')}><Icon name="back" size={18} /> Back</button><button className="button primary" disabled={!canStartBallot(categories, mode)} onClick={start}>Continue with {customCategoryIds.length} {customCategoryIds.length === 1 ? 'category' : 'categories'}<Icon name="arrow" size={18} /></button></div></div></div>
       </>}
@@ -150,7 +164,7 @@ function BallotApp({ data, config }) {
       </>}
 
       {screen === 'summary' && <>
-        <section className="summary-hero"><div className="completion-mark"><Icon name="check" size={32} /></div><p className="eyebrow">THAT’S A WRAP</p><h1 ref={heading} tabIndex="-1">Your ballot.<br /><em>Your kind of golden.</em></h1><p>{picks.length} categories. {picks.length} favorites. One very good taste in music.</p><button className="button primary" onClick={() => setStoryOpen(true)}><Icon name="share" size={19} /> Create my Instagram story</button><span className="summary-export-note">1080 × 1920 · Ready for Stories · {Math.ceil(picks.length / 6)} {Math.ceil(picks.length / 6) === 1 ? 'image' : 'images'} with all your picks</span></section>
+        <section className="summary-hero"><div className="completion-mark"><Icon name="check" size={32} /></div><p className="eyebrow">THAT’S A WRAP</p><h1 ref={heading} tabIndex="-1">Your ballot.<br /><em>Your kind of golden.</em></h1><p>{picks.length} categories. {picks.length} favorites. One very good taste in music.</p><button className="button primary" onClick={() => setStoryOpen(true)}><Icon name="share" size={19} /> Create my Instagram story</button><span className="summary-export-note">1080 × 1920 · Ready for Stories · {storyPages(picks).length} {storyPages(picks).length === 1 ? 'image' : 'images'} with all your picks</span></section>
         <div className="section-intro summary-intro"><div><p className="eyebrow">YOUR WINNERS’ CIRCLE</p><h2>Every pick, in one place.</h2></div><span className="count-badge">{picks.length} picks</span></div>
         <div className="summary-list">{picks.map(({ category, nominee }) => <article className="summary-card" key={category.id}><div className="summary-check"><Icon name="check" size={17} /></div><div className="summary-card-copy"><p className="summary-category">{category.name.replace(/\s*\(new for 2027\)/i, '')}</p><h3>{nominee.title || nominee.artist}</h3>{nominee.title && <p className="summary-artist">{nominee.artist}</p>}</div><button className="edit-button" onClick={() => { setIndex(categories.findIndex(item => item.id === category.id)); setEditing(true); setScreen('ballot'); }} aria-label={`Edit your pick for ${category.name}`}>Edit</button></article>)}</div>
         <div className="summary-actions"><button className="button primary" onClick={() => setStoryOpen(true)}><Icon name="share" size={18} /> Create my story</button><button className="text-button" onClick={() => setRestartOpen(true)}>Start a fresh ballot</button></div>
@@ -217,10 +231,10 @@ function StoryModal({ picks, theme, onClose }) {
       else { downloadBlob(current.blob, current.name); setNotice('Image saved. Open Instagram and add it to your Story.'); }
     } catch (error) { if (error.name !== 'AbortError') setError('Sharing is not available here. Use “Save image” instead.'); }
   }
-  return <Dialog title="Your picks, story-ready." onClose={onClose} className="story-dialog"><p className="dialog-description">{stories.length > 1 ? `Your complete ballot is split into ${stories.length} images, with every pick included.` : 'A little gold for your Instagram Story.'} Save an image, then add it to your Story.</p>
+  return <Dialog title="Your picks, story-ready." onClose={onClose} className="story-dialog"><p className="dialog-description">{stories.length > 1 ? `One Story per musical area: ${stories.length} images, with every pick included.` : 'A little gold for your Instagram Story.'} Save an image, then add it to your Story.</p>
     {error && <p className="notice" role="alert">{error}</p>}
     {!stories.length && !error && <div className="story-loading" role="status"><div className="loading-mark"><Icon name="spark" size={32} /></div>Giving your picks the golden treatment…</div>}
-    {current && <><div className="story-preview-wrap"><img className="story-preview" src={current.url} alt={`Instagram Story ${page + 1} of ${stories.length}, showing your picks for ${picks.slice(page * 6, (page + 1) * 6).map(pick => pick.category.name).join(', ')}`} width="1080" height="1920" /></div><div className="story-pagination"><button className="icon-button" aria-label="Previous story" disabled={page === 0} onClick={() => setPage(page - 1)}><Icon name="back" /></button><span aria-live="polite">Story {page + 1} of {stories.length}</span><button className="icon-button" aria-label="Next story" disabled={page === stories.length - 1} onClick={() => setPage(page + 1)}><Icon name="arrow" /></button></div><div className="story-buttons"><button className="button primary" onClick={() => { downloadBlob(current.blob, current.name); setNotice('Image saved. Open Instagram and add it to your Story.'); }}><Icon name="download" size={17} /> Save image</button><button className="button secondary" onClick={share}><Icon name="share" size={17} /> Share image</button></div>{stories.length > 1 && <button className="text-button download-all" onClick={downloadAll} disabled={busy}>{busy ? 'Preparing download…' : `Download all ${stories.length} stories (ZIP)`}<Icon name="download" size={14} /></button>}<p className="story-hint">{stories[0]?.missingArtworkCount > 0 && <span className="artwork-notice">Some artwork is unavailable. All your picks are included.<br /></span>}1080 × 1920 PNG · {theme === 'dark' ? 'Black' : 'White'} & gold</p>{notice && <p className="share-notice" role="status">{notice}</p>}</>}
+    {current && <><div className="story-preview-wrap"><img className="story-preview" src={current.url} alt={`Instagram Story ${page + 1} of ${stories.length}, showing your picks for ${storyPages(picks)[page].map(pick => pick.category.name).join(', ')}`} width="1080" height="1920" /></div><div className="story-pagination"><button className="icon-button" aria-label="Previous story" disabled={page === 0} onClick={() => setPage(page - 1)}><Icon name="back" /></button><span aria-live="polite">Story {page + 1} of {stories.length}</span><button className="icon-button" aria-label="Next story" disabled={page === stories.length - 1} onClick={() => setPage(page + 1)}><Icon name="arrow" /></button></div><div className="story-buttons"><button className="button primary" onClick={() => { downloadBlob(current.blob, current.name); setNotice('Image saved. Open Instagram and add it to your Story.'); }}><Icon name="download" size={17} /> Save image</button><button className="button secondary" onClick={share}><Icon name="share" size={17} /> Share image</button></div>{stories.length > 1 && <button className="text-button download-all" onClick={downloadAll} disabled={busy}>{busy ? 'Preparing download…' : `Download all ${stories.length} stories (ZIP)`}<Icon name="download" size={14} /></button>}<p className="story-hint">{stories[0]?.missingArtworkCount > 0 && <span className="artwork-notice">Some artwork is unavailable. All your picks are included.<br /></span>}1080 × 1920 PNG · {theme === 'dark' ? 'Black' : 'White'} & gold</p>{notice && <p className="share-notice" role="status">{notice}</p>}</>}
   </Dialog>;
 }
 

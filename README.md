@@ -24,7 +24,7 @@ After starting `npm run preview -- --port 4173`, run `npm run test:browser` for 
 - Mode cards are ordered Main Categories, Custom Categories, Full Experience. The main-category card has a short generic description and a category count, without listing the lineup. Full Experience always includes all 100 categories.
 - White/gold light mode and black/gold dark mode; theme preference persists locally.
 - Story images include verified Spotify album/single artwork, loaded with anonymous CORS. Missing or blocked artwork gets a clear placeholder without preventing PNG/ZIP export.
-- Local 1080 × 1920 PNG export, six picks per image, with download, native sharing when supported, and a ZIP of all images. A 100-category ballot creates 17 story images, including every pick.
+- Local 1080 × 1920 PNG export: one Story per official musical field, with equal space for each selected award and cover artwork. Download, native sharing when supported, and a ZIP of all images. A complete 100-category ballot creates 12 Stories.
 - No backend, accounts, or official vote submission. Picks remain in browser storage.
 
 ## Main-category ballot
@@ -65,3 +65,5 @@ Run `node tests/album-artwork-browser-check.mjs` against the running preview for
 Categories 5 and 6 retain all nominees, with one representative song per nominee from their officially submitted works. Tracks taken from a submitted album are identified as examples rather than nominated individual songs. New visitors default to Main Categories; returning visitors keep their saved ballot mode.
 
 Run `node tests/main-ballot-browser-check.mjs` to verify the approved 30-category descending sequence, one example song per nominee in categories 5/6, persistence, and Full Experience retaining all categories.
+
+Custom awards are grouped in initially expanded field accordions, with expand/collapse controls. The header counts down to the official February 7, 2027 telecast (4 PM PT / 7 PM ET; February 8 at 00:00 UTC), then stays at zero. Source: https://www.grammy.com/news/how-to-watch-2027-grammys-2/

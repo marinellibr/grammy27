@@ -9,8 +9,8 @@ test('every published category is preserved and all valid picks appear in the re
   const picks = getPicks(categories, choices), pages = storyPages(picks);
   assert.equal(picks.length, data.categories_count);
   assert.deepEqual(pages.flat(), picks);
-  assert.ok(pages.every(page => page.length <= 6));
-  assert.equal(pages.length, 17);
+  assert.ok(pages.every(page => page.every(pick => pick.category.field === page[0].category.field)));
+  assert.equal(pages.length, 12);
 });
 test('invalid or outdated stored picks never count as complete', () => {
   const clean = validChoices({ [categories[0].id]: -1, [categories[1].id]: 999, [categories[2].id]: '0', [categories[3].id]: 0, unrelated: 0 }, categories);

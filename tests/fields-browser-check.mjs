@@ -1,0 +1,30 @@
+import { chromium } from 'playwright';
+import assert from 'node:assert/strict';
+import { readFile, mkdir } from 'node:fs/promises';
+const browser = await chromium.launch({ executablePath: '/usr/bin/chromium', args: ['--no-sandbox'] });
+try {
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 }, ignoreHTTPSErrors: true });
+  const errors = []; page.on('pageerror', e => errors.push(e.message));
+  await page.route('https://open.spotify.com/**', r => r.fulfill({ body: 'Preview' }));
+  await page.goto('http://127.0.0.1:4173/grammy27/');
+  await page.getByRole('timer').waitFor();
+  assert.equal(await page.locator('.countdown-digits span').count(), 4);
+  await page.locator('.custom-mode-card').click();
+  await page.getByRole('button', { name: 'Choose my categories' }).click();
+  assert.equal(await page.locator('.field-heading[aria-expanded="true"]').count(), 12);
+  assert.equal(await page.getByRole('checkbox').count(), 100);
+  await page.getByRole('checkbox', { name: 'Album Of The Year', exact: true }).check();
+  await page.getByRole('button', { name: 'Collapse all', exact: true }).click();
+  assert.equal(await page.getByRole('checkbox').count(), 0);
+  assert.equal(await page.getByRole('button', { name: 'Continue with 1 category', exact: true }).isDisabled(), true);
+  await page.getByRole('button', { name: 'Expand all', exact: true }).click();
+  assert.equal(await page.getByRole('checkbox', { name: 'Album Of The Year', exact: true }).isChecked(), true);
+  await page.getByRole('searchbox').fill('Rock');
+  assert.ok(await page.getByRole('checkbox').count() > 0);
+  await page.getByRole('searchbox').fill('');
+  assert.equal(await page.getByRole('checkbox').count(), 100);
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+  await mkdir('qa', { recursive: true }); await page.screenshot({ path: 'qa/fields-mobile.png', fullPage: true });
+  assert.deepEqual(errors, []);
+  console.log('PASS: countdown, 12 open accordions, collapse/expand, saved selection, minimum two, search, mobile width.');
+} finally { await browser.close(); }

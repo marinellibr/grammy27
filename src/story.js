@@ -1,4 +1,4 @@
-import { storyPages } from './ballot';
+import { storyPages, fieldLabel } from './ballot';
 
 function lines(ctx, value, maxWidth, maxLines) {
   const words = String(value || '').split(/\s+/), output = [];
@@ -56,6 +56,7 @@ function drawArtwork(ctx, image, x, y, size, palette) {
     const side = Math.min(image.naturalWidth, image.naturalHeight);
     ctx.drawImage(image, (image.naturalWidth - side) / 2, (image.naturalHeight - side) / 2, side, side, x, y, size, size);
   } else {
+    ctx.translate(x, y); ctx.scale(size / 168, size / 168); x = 0; y = 0; size = 168;
     ctx.fillStyle = palette.background; ctx.fillRect(x, y, size, size);
     ctx.strokeStyle = palette.line; ctx.lineWidth = 2; ctx.strokeRect(x + 1, y + 1, size - 2, size - 2);
     ctx.strokeStyle = palette.gold; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x + size / 2, y + size / 2 - 8, 43, 0, Math.PI * 2); ctx.stroke();
@@ -80,31 +81,58 @@ export async function generateStories(picks, theme = 'light') {
     const ctx = canvas.getContext('2d');
     if (!ctx) throw new Error('Your browser could not create an image. Please try another browser.');
     ctx.fillStyle = palette.background; ctx.fillRect(0, 0, 1080, 1920);
-    ctx.strokeStyle = palette.line; ctx.lineWidth = 2; ctx.strokeRect(42, 42, 996, 1836);
     ctx.textBaseline = 'top';
-    ctx.fillStyle = palette.gold; ctx.font = 'bold 23px Arial, sans-serif'; ctx.fillText('THE 2027 GRAMMYS', 86, 112);
-    ctx.fillStyle = palette.text; ctx.font = '76px Georgia, serif'; ctx.fillText('My picks.', 82, 163);
-    ctx.font = 'italic 76px Georgia, serif'; ctx.fillStyle = palette.gold; ctx.fillText('My spotlight.', 82, 248);
-    ctx.fillStyle = palette.muted; ctx.font = '24px Arial, sans-serif'; ctx.fillText(`${picks.length} picks · ${pages.length > 1 ? `Story ${page + 1} of ${pages.length}` : 'One unforgettable year'}`, 86, 350);
-    const rowHeight = 218, startY = 430;
+    const field = fieldLabel(pages[page][0].category.field);
+    ctx.fillStyle = palette.gold; ctx.font = 'bold 22px Arial, sans-serif'; ctx.fillText('THE 2027 GRAMMYS · MY PICKS', 48, 42);
+    ctx.fillStyle = palette.text; ctx.font = '34px Georgia, serif';
+    textBlock(ctx, field, 48, 84, 984, 39, 3);
+    // Each award occupies exactly 1/N of the entire content region.
+    const startY = 224, bottom = 1848, rowHeight = (bottom - startY) / pages[page].length;
     pages[page].forEach(({ category, nominee }, index) => {
       const rowY = startY + index * rowHeight;
-      drawArtwork(ctx, images.get(nominee.artwork_url), 86, rowY + 10, 168, palette);
-      let y = rowY + 3;
-      ctx.fillStyle = palette.gold; ctx.font = 'bold 18px Arial, sans-serif';
-      y += textBlock(ctx, category.name.replace(/\s*\(new for 2027\)/i, '').toUpperCase(), 282, y, 712, 24, 2) + 9;
-      ctx.fillStyle = palette.text; ctx.font = '32px Georgia, serif';
-      y += textBlock(ctx, nominee.title || nominee.artist, 282, y, 712, 38, 2) + 8;
-      if (nominee.title && nominee.artist) {
-        ctx.fillStyle = palette.muted; ctx.font = '21px Arial, sans-serif'; textBlock(ctx, nominee.artist, 282, y, 712, 26, 2);
+      ctx.fillStyle = index % 2 ? palette.background : palette.line;
+      ctx.globalAlpha = index % 2 ? 1 : 0.22; ctx.fillRect(0, rowY, 1080, rowHeight); ctx.globalAlpha = 1;
+      const backgroundImage = images.get(nominee.artwork_url);
+      if (pages[page].length <= 3 && backgroundImage) {
+        // Let the artwork fill each award's entire share, with a theme tint for legibility.
+        ctx.save(); ctx.beginPath(); ctx.rect(0, rowY, 1080, rowHeight); ctx.clip();
+        const scale = Math.max(1080 / backgroundImage.naturalWidth, rowHeight / backgroundImage.naturalHeight);
+        const w = backgroundImage.naturalWidth * scale, h = backgroundImage.naturalHeight * scale;
+        ctx.globalAlpha = theme === 'dark' ? 0.3 : 0.16;
+        ctx.drawImage(backgroundImage, (1080 - w) / 2, rowY + (rowHeight - h) / 2, w, h);
+        ctx.restore();
       }
-      if (index < pages[page].length - 1) { ctx.strokeStyle = palette.line; ctx.beginPath(); ctx.moveTo(86, startY + (index + 1) * rowHeight - 15); ctx.lineTo(994, startY + (index + 1) * rowHeight - 15); ctx.stroke(); }
+      const single = pages[page].length === 1;
+      const size = single ? 820 : Math.min(360, rowHeight - 32);
+      const imageX = single ? 130 : 36, imageY = single ? rowY + 56 : rowY + (rowHeight - size) / 2;
+      drawArtwork(ctx, images.get(nominee.artwork_url), imageX, imageY, size, palette);
+      const x = single ? 80 : imageX + size + 30, width = 1080 - x - (single ? 80 : 36);
+      const compact = rowHeight < 180;
+      const categoryFont = single ? 30 : compact ? Math.min(17, rowHeight * 0.12) : 23;
+      const titleFont = single ? 64 : compact ? Math.min(26, rowHeight * 0.18) : Math.min(44, rowHeight / 7);
+      const artistFont = single ? 34 : compact ? Math.min(18, rowHeight * 0.13) : 25;
+      // Measure first so every text block is vertically centered in its award's share.
+      ctx.font = `bold ${categoryFont}px Arial, sans-serif`;
+      const categoryLines = lines(ctx, category.name.replace(/\s*\(new for 2027\)/i, '').toUpperCase(), width, 2);
+      ctx.font = `${titleFont}px Georgia, serif`;
+      const titleLines = lines(ctx, nominee.title || nominee.artist, width, 2);
+      ctx.font = `${artistFont}px Arial, sans-serif`;
+      const artistLines = nominee.title && nominee.artist ? lines(ctx, nominee.artist, width, compact ? 1 : 2) : [];
+      const gap = compact ? 4 : 14;
+      const height = categoryLines.length * categoryFont * 1.2 + titleLines.length * titleFont * 1.15 + artistLines.length * artistFont * 1.2 + gap * 2;
+      let y = single ? imageY + size + 65 : rowY + (rowHeight - height) / 2;
+      ctx.fillStyle = palette.gold; ctx.font = `bold ${categoryFont}px Arial, sans-serif`;
+      categoryLines.forEach(line => { ctx.fillText(line, x, y); y += categoryFont * 1.2; }); y += gap;
+      ctx.fillStyle = palette.text; ctx.font = `${titleFont}px Georgia, serif`;
+      titleLines.forEach(line => { ctx.fillText(line, x, y); y += titleFont * 1.15; }); y += gap;
+      ctx.fillStyle = palette.muted; ctx.font = `${artistFont}px Arial, sans-serif`;
+      artistLines.forEach(line => { ctx.fillText(line, x, y); y += artistFont * 1.2; });
+      if (index) { ctx.strokeStyle = palette.line; ctx.beginPath(); ctx.moveTo(36, rowY); ctx.lineTo(1044, rowY); ctx.stroke(); }
     });
-    ctx.strokeStyle = palette.gold; ctx.beginPath(); ctx.moveTo(86, 1786); ctx.lineTo(994, 1786); ctx.stroke();
-    ctx.fillStyle = palette.gold; ctx.font = 'bold 22px Arial, sans-serif'; ctx.fillText('YOUR PICKS. YOUR SPOTLIGHT.', 86, 1810);
-    ctx.fillStyle = palette.muted; ctx.font = '19px Arial, sans-serif'; ctx.fillText('marinellibr.github.io/grammy27', 86, 1847);
+    ctx.fillStyle = palette.gold; ctx.font = '19px Arial, sans-serif'; ctx.fillText('YOUR PICKS. YOUR SPOTLIGHT.', 48, 1876);
+    ctx.fillStyle = palette.muted; ctx.textAlign = 'right'; ctx.fillText('marinellibr.github.io/grammy27', 1032, 1876); ctx.textAlign = 'left';
     const blob = await new Promise((resolve, reject) => canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error('Image export failed. Please try again.')), 'image/png'));
-    results.push({ missingArtworkCount, blob, url: URL.createObjectURL(blob), name: `my-grammy-2027-picks-${String(page + 1).padStart(2, '0')}.png` });
+    results.push({ field, awardCount: pages[page].length, missingArtworkCount, blob, url: URL.createObjectURL(blob), name: `my-grammy-2027-picks-${String(page + 1).padStart(2, '0')}.png` });
     await new Promise(resolve => setTimeout(resolve, 0));
   }
   return results;

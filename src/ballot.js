@@ -79,7 +79,26 @@ export function readSaved(categories, defaultMode = 'full') {
   };
 }
 
-export function storyPages(picks, perPage = 6) {
-  if (!Number.isInteger(perPage) || perPage < 1) throw new Error('Invalid page size');
-  return Array.from({ length: Math.ceil(picks.length / perPage) }, (_, page) => picks.slice(page * perPage, (page + 1) * perPage));
+export function fieldLabel(field) {
+  return (field || 'General Field').replace(/^Field \d+:\s*/, '');
+}
+
+export function groupCategories(categories) {
+  const groups = new Map();
+  for (const category of categories) {
+    const field = category.field || 'General Field';
+    if (!groups.has(field)) groups.set(field, { field, label: fieldLabel(field), categories: [] });
+    groups.get(field).categories.push(category);
+  }
+  return [...groups.values()];
+}
+
+export function storyPages(picks) {
+  const groups = new Map();
+  for (const pick of picks) {
+    const field = pick.category.field || 'General Field';
+    if (!groups.has(field)) groups.set(field, []);
+    groups.get(field).push(pick);
+  }
+  return [...groups.values()];
 }
