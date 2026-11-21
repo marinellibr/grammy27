@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { createRoot } from 'react-dom/client';
-import { STORAGE_KEY, orderCategories, categoriesForMode, getPicks, hasChoice, getEmbed, readSaved, canStartBallot, getYouTubeVideo, isAlbumCategory, groupCategories, storyPages } from './ballot';
+import { STORAGE_KEY, orderCategories, categoriesForMode, getPicks, hasChoice, getEmbed, readSaved, canStartBallot, getYouTubeVideo, isAlbumCategory, groupCategories, storyPages, customBallotLink, readSharedBallot } from './ballot';
 import { generateStories, downloadBlob, downloadAllStories } from './story';
 import './styles.css';
 import { countdown } from './countdown';
@@ -51,8 +51,10 @@ function App() {
 
 function BallotApp({ data, config }) {
   const [saved] = useState(() => readSaved(data.categories, config.mainCategoryIds?.length ? 'main' : 'full'));
-  const [screen, setScreen] = useState('home'), [mode, setMode] = useState(saved.mode), [choices, setChoices] = useState(saved.choices), [autoAdvance, setAutoAdvance] = useState(saved.autoAdvance);
-  const [customCategoryIds, setCustomCategoryIds] = useState(saved.customCategoryIds), [categoryQuery, setCategoryQuery] = useState('');
+  const [shared, setShared] = useState(() => readSharedBallot(window.location.hash, data.categories));
+  const [shareOpen, setShareOpen] = useState(false);
+  const [screen, setScreen] = useState(shared.status === 'valid' ? 'customize' : 'home'), [mode, setMode] = useState(shared.status === 'valid' ? 'custom' : saved.mode), [choices, setChoices] = useState(saved.choices), [autoAdvance, setAutoAdvance] = useState(saved.autoAdvance);
+  const [customCategoryIds, setCustomCategoryIds] = useState(shared.status === 'valid' ? shared.ids : saved.customCategoryIds), [categoryQuery, setCategoryQuery] = useState('');
   const [closedFields, setClosedFields] = useState([]);
   const [index, setIndex] = useState(0), [editing, setEditing] = useState(false), [theme, setTheme] = useState(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
   const [storageWarning, setStorageWarning] = useState(false), [storyOpen, setStoryOpen] = useState(false), [restartOpen, setRestartOpen] = useState(false);
@@ -74,6 +76,23 @@ function BallotApp({ data, config }) {
     return () => clearTimeout(pendingAdvance.current);
   }, [screen, index]);
   useEffect(() => () => clearTimeout(pendingAdvance.current), []);
+  useEffect(() => {
+    if (shared.status !== 'none') window.history.replaceState(null, '', window.location.pathname + window.location.search);
+  }, [shared]);
+  useEffect(() => {
+    function importSharedLink() {
+      const incoming = readSharedBallot(window.location.hash, data.categories);
+      if (incoming.status === 'none') return;
+      setShared(incoming);
+      if (incoming.status === 'valid') {
+        clearTimeout(pendingAdvance.current);
+        setMode('custom'); setCustomCategoryIds(incoming.ids); setCategoryQuery('');
+        setClosedFields([]); setEditing(false); setShareOpen(false); setScreen('customize');
+      }
+    }
+    window.addEventListener('hashchange', importSharedLink);
+    return () => window.removeEventListener('hashchange', importSharedLink);
+  }, [data.categories]);
 
   function start() {
     if (!canStartBallot(categories, mode)) return;
@@ -124,6 +143,7 @@ function BallotApp({ data, config }) {
     </div></header>
 
     <main id="main" className={`main-content ${screen}`}>
+      {shared.status === 'invalid' && <p className="notice" role="status">This shared ballot link is invalid or out of date. Your saved ballot is still available.</p>}
       {storageWarning && <div className="notice" role="status">Your browser cannot save progress. Keep this tab open to finish your ballot.</div>}
       {screen === 'home' && <>
         <section className="hero"><div className="hero-copy"><p className="eyebrow"><span className="gold-dot" /> THE 69TH GRAMMY AWARDS · 2027</p><h1 ref={heading} tabIndex="-1">Your picks.<br /><em>Your spotlight.</em></h1><p className="hero-description">A year of incredible music. A ballot that’s all yours.<br className="desktop-break" /> Listen to the nominees, pick your favorites, and share your own winners.</p><div className="hero-details"><span><Icon name="headphones" size={16} /> Listen as you go</span><span><Icon name="check" size={16} /> Saved on your device</span></div></div><div className="hero-art" aria-hidden="true"><div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="orbit orbit-three" /><div className="vinyl"><div className="vinyl-grooves" /><div className="vinyl-label"><Icon name="spark" size={38} /><span>YOUR<br />WINNERS</span><i /></div></div><span className="art-caption">GOOD MUSIC. GREAT INSTINCTS.</span><span className="floating-star"><Icon name="spark" size={32} /></span></div></section>
@@ -144,6 +164,8 @@ function BallotApp({ data, config }) {
         <div className="ballot-topline"><button className="text-button" onClick={() => setScreen('home')}><Icon name="back" size={16} /> Ballot versions</button><span>CUSTOM CATEGORIES</span></div>
         <section className="category-heading custom-heading"><p className="eyebrow">A BALLOT THAT SOUNDS LIKE YOU</p><h1 ref={heading} tabIndex="-1">Set your own stage.</h1><p>Pick the categories you want to vote in. Select at least two to get started.</p></section>
         <div className="category-picker-tools"><label className="category-search"><span>Find a category</span><input type="search" value={categoryQuery} onChange={event => setCategoryQuery(event.target.value)} placeholder="Search categories…" /></label><div className="category-bulk-actions"><button className="text-button" onClick={() => setCustomCategoryIds(data.categories.map(category => category.id))}>Select all {data.categories.length}</button><button className="text-button" disabled={!customCategoryIds.length} onClick={() => setCustomCategoryIds([])}>Clear selection</button></div></div>
+        <div className="custom-share-row"><p>Invite friends to vote in the same categories.</p><button className="button secondary" disabled={customCategoryIds.length < 2} onClick={() => setShareOpen(true)}>Share category list</button></div>
+        {shared.status === 'valid' && <p className="shared-ballot-note">Someone shared this category list with you. Review the selection, then make your own picks.</p>}
         <div className="accordion-tools"><button className="text-button" onClick={() => setClosedFields([])}>Expand all</button><button className="text-button" onClick={() => { setCategoryQuery(''); setClosedFields(groupCategories(data.categories).map(group => group.field)); }}>Collapse all</button></div>
         <div className="field-accordions">{groupCategories(visibleCategories).map((group, groupIndex) => {
           const open = !!categoryQuery.trim() || !closedFields.includes(group.field);
@@ -167,10 +189,11 @@ function BallotApp({ data, config }) {
         <section className="summary-hero"><div className="completion-mark"><Icon name="check" size={32} /></div><p className="eyebrow">THAT’S A WRAP</p><h1 ref={heading} tabIndex="-1">Your ballot.<br /><em>Your kind of golden.</em></h1><p>{picks.length} categories. {picks.length} favorites. One very good taste in music.</p><button className="button primary" onClick={() => setStoryOpen(true)}><Icon name="share" size={19} /> Create my Instagram story</button><span className="summary-export-note">1080 × 1920 · Ready for Stories · {storyPages(picks).length} {storyPages(picks).length === 1 ? 'image' : 'images'} with all your picks</span></section>
         <div className="section-intro summary-intro"><div><p className="eyebrow">YOUR WINNERS’ CIRCLE</p><h2>Every pick, in one place.</h2></div><span className="count-badge">{picks.length} picks</span></div>
         <div className="summary-list">{picks.map(({ category, nominee }) => <article className="summary-card" key={category.id}><div className="summary-check"><Icon name="check" size={17} /></div><div className="summary-card-copy"><p className="summary-category">{category.name.replace(/\s*\(new for 2027\)/i, '')}</p><h3>{nominee.title || nominee.artist}</h3>{nominee.title && <p className="summary-artist">{nominee.artist}</p>}</div><button className="edit-button" onClick={() => { setIndex(categories.findIndex(item => item.id === category.id)); setEditing(true); setScreen('ballot'); }} aria-label={`Edit your pick for ${category.name}`}>Edit</button></article>)}</div>
-        <div className="summary-actions"><button className="button primary" onClick={() => setStoryOpen(true)}><Icon name="share" size={18} /> Create my story</button><button className="text-button" onClick={() => setRestartOpen(true)}>Start a fresh ballot</button></div>
+        <div className="summary-actions">{mode === 'custom' && <button className="button secondary" onClick={() => setShareOpen(true)}>Share category list</button>}<button className="button primary" onClick={() => setStoryOpen(true)}><Icon name="share" size={18} /> Create my story</button><button className="text-button" onClick={() => setRestartOpen(true)}>Start a fresh ballot</button></div>
       </>}
       {screen !== 'ballot' && screen !== 'customize' && <footer className="site-footer"><span className="footer-brand"><Icon name="spark" size={17} /> MADE FOR THE LOVE OF MUSIC.</span><p>An independent fan ballot. Your picks stay on this device.</p><div><a href="https://www.grammy.com/news/2027-grammys-full-nominations-full-winners-nominees-list/" target="_blank" rel="noreferrer">Official nominees <Icon name="external" size={12} /></a><span>·</span><a href={`${import.meta.env.BASE_URL}grammy-2027-nominations.json`} target="_blank" rel="noreferrer">Nomination data</a></div><p className="snapshot-note">Complete nominee list · November 16, 2026</p></footer>}
     </main>
+    {shareOpen && <CustomShareDialog url={customBallotLink(window.location.href, customCategoryIds, data.categories)} count={customCategoryIds.length} onClose={() => setShareOpen(false)} />}
     {storyOpen && <StoryModal picks={picks} theme={theme} onClose={() => setStoryOpen(false)} />}
     {restartOpen && <Dialog title="A fresh set of picks?" onClose={() => setRestartOpen(false)}><p className="dialog-description">This will clear all your saved selections, including picks in the other ballot version.</p><div className="dialog-actions"><button className="button secondary" onClick={() => setRestartOpen(false)}>Keep my picks</button><button className="button primary" onClick={() => { setChoices({}); setIndex(0); setEditing(false); setRestartOpen(false); setScreen('home'); }}>Start fresh</button></div></Dialog>}
   </div>;
@@ -211,6 +234,20 @@ function Dialog({ title, onClose, children, className = '' }) {
     return () => { document.body.style.overflow = previousOverflow; document.removeEventListener('keydown', keydown); before?.focus(); };
   }, []);
   return <div className="dialog-backdrop" onClick={event => { if (event.target === event.currentTarget) onClose(); }}><section className={`dialog ${className}`} ref={dialog} role="dialog" aria-modal="true" aria-labelledby="dialog-title"><div className="dialog-top"><h2 id="dialog-title">{title}</h2><button className="icon-button" onClick={onClose} aria-label="Close dialog"><Icon name="close" /></button></div>{children}</section></div>;
+}
+
+function CustomShareDialog({ url, count, onClose }) {
+  const [notice, setNotice] = useState('');
+  const input = useRef(null);
+  async function copy() {
+    try { await navigator.clipboard.writeText(url); setNotice('Link copied. Send it to your friends.'); }
+    catch { input.current?.focus(); input.current?.select(); setNotice('Select and copy the link above to share it.'); }
+  }
+  async function share() {
+    try { await navigator.share({ title: 'My Grammy 2027 category list', text: `Make your own picks in these ${count} Grammy categories.`, url }); }
+    catch (error) { if (error.name !== 'AbortError') setNotice('Sharing is unavailable. Copy the link instead.'); }
+  }
+  return <Dialog title="Share your category list" onClose={onClose}><p className="dialog-description">Invite friends to make their own picks in your {count} selected categories. This link shares the categories only. Your votes stay on your device.</p><label className="share-link-label">Your custom ballot link<input ref={input} className="share-link-input" readOnly value={url} onFocus={event => event.target.select()} /></label><div className="dialog-actions"><button className="button primary" onClick={copy}>Copy link</button>{!!navigator.share && <button className="button secondary" onClick={share}>Share link</button>}</div>{notice && <p className="share-notice" role="status">{notice}</p>}</Dialog>;
 }
 
 function StoryModal({ picks, theme, onClose }) {

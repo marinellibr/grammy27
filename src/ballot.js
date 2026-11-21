@@ -102,3 +102,22 @@ export function storyPages(picks) {
   }
   return [...groups.values()];
 }
+
+// The link contains category IDs only, never votes or personal data.
+export function customBallotLink(baseUrl, ids, categories) {
+  const selected = validCustomCategories(ids, categories);
+  if (selected.length < 2) throw new Error('Choose at least two categories to share.');
+  const url = new URL(baseUrl);
+  url.search = '';
+  url.hash = new URLSearchParams({ custom: selected.join(','), v: '1' }).toString();
+  return url.href;
+}
+
+export function readSharedBallot(hash, categories) {
+  const params = new URLSearchParams(String(hash || '').replace(/^#/, ''));
+  if (!params.has('custom')) return { status: 'none', ids: [] };
+  const raw = params.get('custom').split(',');
+  const ids = validCustomCategories(raw, categories);
+  if (params.get('v') !== '1' || ids.length < 2 || raw.some(id => !ids.includes(id))) return { status: 'invalid', ids: [] };
+  return { status: 'valid', ids };
+}

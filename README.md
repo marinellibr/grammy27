@@ -67,3 +67,5 @@ Categories 5 and 6 retain all nominees, with one representative song per nominee
 Run `node tests/main-ballot-browser-check.mjs` to verify the approved 30-category descending sequence, one example song per nominee in categories 5/6, persistence, and Full Experience retaining all categories.
 
 Custom awards are grouped in initially expanded field accordions, with expand/collapse controls. The header counts down to the official February 7, 2027 telecast (4 PM PT / 7 PM ET; February 8 at 00:00 UTC), then stays at zero. Source: https://www.grammy.com/news/how-to-watch-2027-grammys-2/
+
+Custom category lists can be shared from the selection screen or completed summary. The link encodes validated category IDs in a versioned URL fragment, requires at least two categories, and imports directly into Custom for review. It contains no votes; existing personal votes stay on the receiving device. Links can be copied or sent with native sharing where supported.
