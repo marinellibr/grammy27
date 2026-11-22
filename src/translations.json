@@ -1,0 +1,1226 @@
+{
+  "Countdown to the Grammy Awards": {
+    "pt": "Contagem regressiva para o Grammy",
+    "es": "Cuenta regresiva para los Grammy"
+  },
+  "The wait is over": {
+    "pt": "A espera acabou",
+    "es": "La espera terminó"
+  },
+  "Until Grammy night": {
+    "pt": "Até a noite do Grammy",
+    "es": "Hasta la noche de los Grammy"
+  },
+  "Feb 7, 2027 · 4 PM PT / 7 PM ET": {
+    "pt": "7 fev. 2027 · 16h PT / 19h ET",
+    "es": "7 feb. 2027 · 16:00 PT / 19:00 ET"
+  },
+  "days": {
+    "pt": "dias",
+    "es": "días"
+  },
+  "hours": {
+    "pt": "horas",
+    "es": "horas"
+  },
+  "minutes": {
+    "pt": "minutos",
+    "es": "minutos"
+  },
+  "seconds": {
+    "pt": "segundos",
+    "es": "segundos"
+  },
+  "Could not load the ballot.": {
+    "pt": "Não foi possível carregar a votação.",
+    "es": "No se pudo cargar la votación."
+  },
+  "The ballot is not available yet.": {
+    "pt": "A votação ainda não está disponível.",
+    "es": "La votación aún no está disponible."
+  },
+  "Let’s try that again.": {
+    "pt": "Vamos tentar novamente.",
+    "es": "Intentémoslo de nuevo."
+  },
+  "Reload ballot": {
+    "pt": "Recarregar votação",
+    "es": "Recargar votación"
+  },
+  "Setting the stage…": {
+    "pt": "Preparando o palco…",
+    "es": "Preparando el escenario…"
+  },
+  "Your ballot": {
+    "pt": "Sua votação",
+    "es": "Tu votación"
+  },
+  "Make your picks": {
+    "pt": "Faça suas escolhas",
+    "es": "Elige tus favoritos"
+  },
+  "Build your ballot": {
+    "pt": "Monte sua votação",
+    "es": "Crea tu votación"
+  },
+  "The fan ballot": {
+    "pt": "A votação dos fãs",
+    "es": "La votación de los fans"
+  },
+  "Skip to content": {
+    "pt": "Pular para o conteúdo",
+    "es": "Saltar al contenido"
+  },
+  "Grammy 2027 home": {
+    "pt": "Início do Grammy 2027",
+    "es": "Inicio de los Grammy 2027"
+  },
+  "Dark mode": {
+    "pt": "Modo escuro",
+    "es": "Modo oscuro"
+  },
+  "Switch to light mode": {
+    "pt": "Mudar para modo claro",
+    "es": "Cambiar a modo claro"
+  },
+  "Switch to dark mode": {
+    "pt": "Mudar para modo escuro",
+    "es": "Cambiar a modo oscuro"
+  },
+  "Dark": {
+    "pt": "Escuro",
+    "es": "Oscuro"
+  },
+  "Light": {
+    "pt": "Claro",
+    "es": "Claro"
+  },
+  "Black": {
+    "pt": "Preto",
+    "es": "Negro"
+  },
+  "White": {
+    "pt": "Branco",
+    "es": "Blanco"
+  },
+  "This shared ballot link is invalid or out of date. Your saved ballot is still available.": {
+    "pt": "Este link de votação é inválido ou está desatualizado. Sua votação salva continua disponível.",
+    "es": "Este enlace no es válido o está desactualizado. Tu votación guardada sigue disponible."
+  },
+  "Your browser cannot save progress. Keep this tab open to finish your ballot.": {
+    "pt": "Seu navegador não consegue salvar o progresso. Mantenha esta aba aberta para concluir a votação.",
+    "es": "Tu navegador no puede guardar el progreso. Mantén esta pestaña abierta para terminar de votar."
+  },
+  "THE 69TH GRAMMY AWARDS · 2027": {
+    "pt": "69ª EDIÇÃO DO GRAMMY · 2027",
+    "es": "69.ª EDICIÓN DE LOS GRAMMY · 2027"
+  },
+  "Your picks.": {
+    "pt": "Suas escolhas.",
+    "es": "Tus elecciones."
+  },
+  "Your spotlight.": {
+    "pt": "Seu destaque.",
+    "es": "Tu protagonismo."
+  },
+  "A year of incredible music. A ballot that’s all yours.": {
+    "pt": "Um ano de músicas incríveis. Uma votação só sua.",
+    "es": "Un año de música increíble. Una votación a tu medida."
+  },
+  "Listen to the nominees, pick your favorites, and share your own winners.": {
+    "pt": "Ouça os indicados, escolha seus favoritos e compartilhe seus vencedores.",
+    "es": "Escucha a los nominados, elige tus favoritos y comparte tus ganadores."
+  },
+  "Listen as you go": {
+    "pt": "Ouça enquanto vota",
+    "es": "Escucha mientras votas"
+  },
+  "Saved on your device": {
+    "pt": "Salvo no seu dispositivo",
+    "es": "Guardado en tu dispositivo"
+  },
+  "YOUR": {
+    "pt": "SEUS",
+    "es": "TUS"
+  },
+  "WINNERS": {
+    "pt": "VENCEDORES",
+    "es": "GANADORES"
+  },
+  "GOOD MUSIC. GREAT INSTINCTS.": {
+    "pt": "BOA MÚSICA. ÓTIMAS ESCOLHAS.",
+    "es": "BUENA MÚSICA. GRANDES ELECCIONES."
+  },
+  "FIRST, SET THE STAGE": {
+    "pt": "PRIMEIRO, PREPARE O PALCO",
+    "es": "PRIMERO, PREPARA EL ESCENARIO"
+  },
+  "How do you want to play?": {
+    "pt": "Como você quer participar?",
+    "es": "¿Cómo quieres participar?"
+  },
+  "Pick your ballot": {
+    "pt": "Escolha sua votação",
+    "es": "Elige tu votación"
+  },
+  "Ballot version": {
+    "pt": "Versão da votação",
+    "es": "Versión de la votación"
+  },
+  "Main categories": {
+    "pt": "Categorias principais",
+    "es": "Categorías principales"
+  },
+  "The headline moments. A shorter ballot for your biggest predictions.": {
+    "pt": "Os grandes momentos. Uma votação mais curta para suas principais apostas.",
+    "es": "Los grandes momentos. Una votación más corta para tus principales predicciones."
+  },
+  "{0} categories": {
+    "pt": "{0} categorias",
+    "es": "{0} categorías"
+  },
+  "Coming soon": {
+    "pt": "Em breve",
+    "es": "Próximamente"
+  },
+  "A little less, just as golden": {
+    "pt": "Mais curta, igualmente dourada",
+    "es": "Más corta, igual de dorada"
+  },
+  "Custom categories": {
+    "pt": "Categorias personalizadas",
+    "es": "Categorías personalizadas"
+  },
+  "Your genres. Your favorites. Build a ballot with the categories you care about.": {
+    "pt": "Seus gêneros. Seus favoritos. Monte uma votação com as categorias que importam para você.",
+    "es": "Tus géneros. Tus favoritos. Crea una votación con las categorías que te importan."
+  },
+  "Choose 2 or more": {
+    "pt": "Escolha 2 ou mais",
+    "es": "Elige 2 o más"
+  },
+  "Make it your own": {
+    "pt": "Do seu jeito",
+    "es": "A tu manera"
+  },
+  "The full experience": {
+    "pt": "A experiência completa",
+    "es": "La experiencia completa"
+  },
+  "Every genre. Every category. Give all your favorites their moment.": {
+    "pt": "Todos os gêneros. Todas as categorias. Dê a cada favorito seu momento.",
+    "es": "Todos los géneros. Todas las categorías. Dale a cada favorito su momento."
+  },
+  "For the music obsessed": {
+    "pt": "Para quem vive música",
+    "es": "Para quienes viven la música"
+  },
+  "The main-category lineup is still being curated. The full experience is ready whenever you are.": {
+    "pt": "As categorias principais ainda estão sendo definidas. A experiência completa já está disponível.",
+    "es": "Las categorías principales aún se están definiendo. La experiencia completa ya está disponible."
+  },
+  "Choose my categories": {
+    "pt": "Escolher minhas categorias",
+    "es": "Elegir mis categorías"
+  },
+  "Lineup coming soon": {
+    "pt": "Categorias em breve",
+    "es": "Categorías próximamente"
+  },
+  "View my ballot": {
+    "pt": "Ver minha votação",
+    "es": "Ver mi votación"
+  },
+  "Continue my ballot": {
+    "pt": "Continuar minha votação",
+    "es": "Continuar mi votación"
+  },
+  "Let’s make some picks": {
+    "pt": "Vamos escolher os favoritos",
+    "es": "Vamos a elegir favoritos"
+  },
+  "category": {
+    "pt": "categoria",
+    "es": "categoría"
+  },
+  "categories": {
+    "pt": "categorias",
+    "es": "categorías"
+  },
+  "{0} {1} selected · Pick at least 2": {
+    "pt": "Seleção: {0} {1} · Escolha pelo menos 2",
+    "es": "Selección: {0} {1} · Elige al menos 2"
+  },
+  "{0} of {1} picks saved": {
+    "pt": "{0} de {1} escolhas salvas",
+    "es": "{0} de {1} elecciones guardadas"
+  },
+  "No sign-up. Just your taste.": {
+    "pt": "Sem cadastro. Só seu gosto musical.",
+    "es": "Sin registro. Solo tu gusto musical."
+  },
+  "Your {0} saved picks are waiting in the full experience.": {
+    "pt": "Suas {0} escolhas salvas estão na experiência completa.",
+    "es": "Tus {0} elecciones guardadas están en la experiencia completa."
+  },
+  "Choose your ballot": {
+    "pt": "Escolha sua votação",
+    "es": "Elige tu votación"
+  },
+  "Listen & pick": {
+    "pt": "Ouça e escolha",
+    "es": "Escucha y elige"
+  },
+  "Share your spotlight": {
+    "pt": "Compartilhe seu destaque",
+    "es": "Comparte tu protagonismo"
+  },
+  "Ballot versions": {
+    "pt": "Versões da votação",
+    "es": "Versiones de la votación"
+  },
+  "CUSTOM CATEGORIES": {
+    "pt": "CATEGORIAS PERSONALIZADAS",
+    "es": "CATEGORÍAS PERSONALIZADAS"
+  },
+  "A BALLOT THAT SOUNDS LIKE YOU": {
+    "pt": "UMA VOTAÇÃO COM A SUA CARA",
+    "es": "UNA VOTACIÓN A TU MEDIDA"
+  },
+  "Set your own stage.": {
+    "pt": "Monte seu próprio palco.",
+    "es": "Crea tu propio escenario."
+  },
+  "Pick the categories you want to vote in. Select at least two to get started.": {
+    "pt": "Escolha em quais categorias quer votar. Selecione pelo menos duas para começar.",
+    "es": "Elige en qué categorías quieres votar. Selecciona al menos dos para empezar."
+  },
+  "Find a category": {
+    "pt": "Encontre uma categoria",
+    "es": "Busca una categoría"
+  },
+  "Search categories…": {
+    "pt": "Buscar categorias…",
+    "es": "Buscar categorías…"
+  },
+  "Select all {0}": {
+    "pt": "Selecionar todas ({0})",
+    "es": "Seleccionar todas ({0})"
+  },
+  "Clear selection": {
+    "pt": "Limpar seleção",
+    "es": "Borrar selección"
+  },
+  "Invite friends to vote in the same categories.": {
+    "pt": "Convide amigos para votar nas mesmas categorias.",
+    "es": "Invita a tus amigos a votar en las mismas categorías."
+  },
+  "Share category list": {
+    "pt": "Compartilhar lista de categorias",
+    "es": "Compartir lista de categorías"
+  },
+  "Someone shared this category list with you. Review the selection, then make your own picks.": {
+    "pt": "Alguém compartilhou esta lista com você. Confira as categorias e faça suas escolhas.",
+    "es": "Alguien compartió esta lista contigo. Revisa las categorías y elige tus favoritos."
+  },
+  "Expand all": {
+    "pt": "Expandir todas",
+    "es": "Expandir todas"
+  },
+  "Collapse all": {
+    "pt": "Recolher todas",
+    "es": "Contraer todas"
+  },
+  "{0} of {1} selected": {
+    "pt": "{0} de {1} selecionadas",
+    "es": "{0} de {1} seleccionadas"
+  },
+  "Choose awards in {0}": {
+    "pt": "Escolha os prêmios de {0}",
+    "es": "Elige los premios de {0}"
+  },
+  "{0} nominees": {
+    "pt": "{0} indicados",
+    "es": "{0} nominados"
+  },
+  "No categories match “{0}”. Try another search.": {
+    "pt": "Nenhuma categoria corresponde a “{0}”. Tente outra busca.",
+    "es": "Ninguna categoría coincide con «{0}». Prueba otra búsqueda."
+  },
+  "{0} selected": {
+    "pt": "{0} selecionadas",
+    "es": "{0} seleccionadas"
+  },
+  "Choose {0} more to continue": {
+    "pt": "Escolha mais {0} para continuar",
+    "es": "Elige {0} más para continuar"
+  },
+  "Your custom ballot is ready": {
+    "pt": "Sua votação personalizada está pronta",
+    "es": "Tu votación personalizada está lista"
+  },
+  "Back": {
+    "pt": "Voltar",
+    "es": "Volver"
+  },
+  "Continue with {0} {1}": {
+    "pt": "Continuar com {0} {1}",
+    "es": "Continuar con {0} {1}"
+  },
+  "Your categories": {
+    "pt": "Suas categorias",
+    "es": "Tus categorías"
+  },
+  "FULL EXPERIENCE": {
+    "pt": "EXPERIÊNCIA COMPLETA",
+    "es": "EXPERIENCIA COMPLETA"
+  },
+  "MAIN CATEGORIES": {
+    "pt": "CATEGORIAS PRINCIPAIS",
+    "es": "CATEGORÍAS PRINCIPALES"
+  },
+  "Ballot progress": {
+    "pt": "Progresso da votação",
+    "es": "Progreso de la votación"
+  },
+  "Category": {
+    "pt": "Categoria",
+    "es": "Categoría"
+  },
+  "{0} of {1} picked": {
+    "pt": "{0} de {1} escolhas feitas",
+    "es": "{0} de {1} elecciones hechas"
+  },
+  "Categories picked": {
+    "pt": "Categorias votadas",
+    "es": "Categorías votadas"
+  },
+  "THE NOMINEES ARE IN. THE PICK IS YOURS.": {
+    "pt": "OS INDICADOS JÁ ESTÃO AQUI. A ESCOLHA É SUA.",
+    "es": "LOS NOMINADOS YA ESTÁN AQUÍ. TÚ ELIGES."
+  },
+  "Press play. Watch the nominees. Give your favorite your vote.": {
+    "pt": "Dê o play. Assista aos indicados. Vote no seu favorito.",
+    "es": "Dale al play. Mira a los nominados. Vota por tu favorito."
+  },
+  "Press play. Find your favorite. Give them your vote.": {
+    "pt": "Dê o play. Encontre seu favorito. Dê seu voto.",
+    "es": "Dale al play. Encuentra a tu favorito. Dale tu voto."
+  },
+  "Watch on YouTube": {
+    "pt": "Assistir no YouTube",
+    "es": "Ver en YouTube"
+  },
+  "Listen with Spotify": {
+    "pt": "Ouvir no Spotify",
+    "es": "Escuchar en Spotify"
+  },
+  "{0} nominees · Choose one": {
+    "pt": "{0} indicados · Escolha um",
+    "es": "{0} nominados · Elige uno"
+  },
+  "Choose your pick for {0}": {
+    "pt": "Escolha seu favorito em {0}",
+    "es": "Elige tu favorito en {0}"
+  },
+  "Watch the official nominated music videos. YouTube controls playback and availability. If a video cannot play here, open it on YouTube.": {
+    "pt": "Assista aos clipes oficiais indicados. O YouTube controla a reprodução e a disponibilidade. Se um vídeo não tocar aqui, abra no YouTube.",
+    "es": "Mira los videoclips oficiales nominados. YouTube controla la reproducción y la disponibilidad. Si un video no se reproduce aquí, ábrelo en YouTube."
+  },
+  "Explore the full nominated albums. Spotify controls playback and preview availability. You can still pick any nominee.": {
+    "pt": "Explore os álbuns indicados completos. O Spotify controla a reprodução e a disponibilidade das prévias. Você pode votar em qualquer indicado.",
+    "es": "Explora los álbumes nominados completos. Spotify controla la reproducción y la disponibilidad de las muestras. Puedes votar por cualquier nominado."
+  },
+  "Spotify controls playback and preview availability. Artist and professional nominees may use a representative track. You can still pick any nominee.": {
+    "pt": "O Spotify controla a reprodução e a disponibilidade das prévias. Artistas e profissionais podem ter uma faixa de exemplo. Você pode votar em qualquer indicado.",
+    "es": "Spotify controla la reproducción y la disponibilidad de las muestras. Los artistas y profesionales pueden tener una pista de ejemplo. Puedes votar por cualquier nominado."
+  },
+  "Advance on selection": {
+    "pt": "Avançar ao selecionar",
+    "es": "Avanzar al seleccionar"
+  },
+  "This session only": {
+    "pt": "Apenas nesta sessão",
+    "es": "Solo en esta sesión"
+  },
+  "Progress saved": {
+    "pt": "Progresso salvo",
+    "es": "Progreso guardado"
+  },
+  "Summary": {
+    "pt": "Resumo",
+    "es": "Resumen"
+  },
+  "Your pick is in.": {
+    "pt": "Sua escolha foi registrada.",
+    "es": "Tu elección está registrada."
+  },
+  "Choose a nominee to continue": {
+    "pt": "Escolha um indicado para continuar",
+    "es": "Elige un nominado para continuar"
+  },
+  "Save pick": {
+    "pt": "Salvar escolha",
+    "es": "Guardar elección"
+  },
+  "See my picks": {
+    "pt": "Ver minhas escolhas",
+    "es": "Ver mis elecciones"
+  },
+  "Next category": {
+    "pt": "Próxima categoria",
+    "es": "Siguiente categoría"
+  },
+  "THAT’S A WRAP": {
+    "pt": "VOTAÇÃO CONCLUÍDA",
+    "es": "VOTACIÓN COMPLETADA"
+  },
+  "Your ballot.": {
+    "pt": "Sua votação.",
+    "es": "Tu votación."
+  },
+  "Your kind of golden.": {
+    "pt": "Seu jeito de brilhar.",
+    "es": "Tu forma de brillar."
+  },
+  "{0} categories. {1} favorites. One very good taste in music.": {
+    "pt": "{0} categorias. {1} favoritos. Muito bom gosto musical.",
+    "es": "{0} categorías. {1} favoritos. Muy buen gusto musical."
+  },
+  "Create my Instagram story": {
+    "pt": "Criar meu Story do Instagram",
+    "es": "Crear mi Story de Instagram"
+  },
+  "1080 × 1920 · Ready for Stories · {0} {1} with all your picks": {
+    "pt": "1080 × 1920 · Pronto para Stories · {0} {1} com todas as escolhas",
+    "es": "1080 × 1920 · Listo para Stories · {0} {1} con todas tus elecciones"
+  },
+  "image": {
+    "pt": "imagem",
+    "es": "imagen"
+  },
+  "images": {
+    "pt": "imagens",
+    "es": "imágenes"
+  },
+  "YOUR WINNERS’ CIRCLE": {
+    "pt": "SEUS GRANDES VENCEDORES",
+    "es": "TUS GRANDES GANADORES"
+  },
+  "Every pick, in one place.": {
+    "pt": "Todas as escolhas, em um só lugar.",
+    "es": "Todas tus elecciones, en un solo lugar."
+  },
+  "{0} picks": {
+    "pt": "{0} escolhas",
+    "es": "{0} elecciones"
+  },
+  "Edit your pick for {0}": {
+    "pt": "Editar sua escolha em {0}",
+    "es": "Editar tu elección en {0}"
+  },
+  "Edit": {
+    "pt": "Editar",
+    "es": "Editar"
+  },
+  "Create my story": {
+    "pt": "Criar meu Story",
+    "es": "Crear mi Story"
+  },
+  "Start a fresh ballot": {
+    "pt": "Começar uma nova votação",
+    "es": "Empezar una nueva votación"
+  },
+  "MADE FOR THE LOVE OF MUSIC.": {
+    "pt": "FEITO POR AMOR À MÚSICA.",
+    "es": "HECHO POR AMOR A LA MÚSICA."
+  },
+  "An independent fan ballot. Your picks stay on this device.": {
+    "pt": "Uma votação independente de fãs. Suas escolhas ficam neste dispositivo.",
+    "es": "Una votación independiente de fans. Tus elecciones quedan en este dispositivo."
+  },
+  "Official nominees": {
+    "pt": "Indicados oficiais",
+    "es": "Nominados oficiales"
+  },
+  "Nomination data": {
+    "pt": "Dados das indicações",
+    "es": "Datos de las nominaciones"
+  },
+  "Complete nominee list · November 16, 2026": {
+    "pt": "Lista completa de indicados · 16 de novembro de 2026",
+    "es": "Lista completa de nominados · 16 de noviembre de 2026"
+  },
+  "A fresh set of picks?": {
+    "pt": "Pronto para novas escolhas?",
+    "es": "¿Listo para nuevas elecciones?"
+  },
+  "This will clear all your saved selections, including picks in the other ballot version.": {
+    "pt": "Isso apagará todas as suas escolhas salvas, incluindo as de outras versões da votação.",
+    "es": "Esto borrará todas tus elecciones guardadas, incluidas las de otras versiones de la votación."
+  },
+  "Keep my picks": {
+    "pt": "Manter minhas escolhas",
+    "es": "Conservar mis elecciones"
+  },
+  "Start fresh": {
+    "pt": "Começar de novo",
+    "es": "Empezar de nuevo"
+  },
+  "Various artists": {
+    "pt": "Vários artistas",
+    "es": "Varios artistas"
+  },
+  "YouTube music video: {0} — {1}": {
+    "pt": "Clipe no YouTube: {0} — {1}",
+    "es": "Videoclip en YouTube: {0} — {1}"
+  },
+  "Music video not available here": {
+    "pt": "Clipe indisponível aqui",
+    "es": "Videoclip no disponible aquí"
+  },
+  "Find on YouTube": {
+    "pt": "Buscar no YouTube",
+    "es": "Buscar en YouTube"
+  },
+  "Example: {0} — {1}": {
+    "pt": "Exemplo: {0} — {1}",
+    "es": "Ejemplo: {0} — {1}"
+  },
+  "Preview: {0}": {
+    "pt": "Prévia: {0}",
+    "es": "Muestra: {0}"
+  },
+  "A track from this nominee’s work": {
+    "pt": "Uma faixa do trabalho deste indicado",
+    "es": "Una pista del trabajo de este nominado"
+  },
+  "Player taking a moment?": {
+    "pt": "O player está demorando?",
+    "es": "¿El reproductor tarda en cargar?"
+  },
+  "Open in Spotify": {
+    "pt": "Abrir no Spotify",
+    "es": "Abrir en Spotify"
+  },
+  "Spotify preview not available": {
+    "pt": "Prévia do Spotify indisponível",
+    "es": "Muestra de Spotify no disponible"
+  },
+  "Find on Spotify": {
+    "pt": "Buscar no Spotify",
+    "es": "Buscar en Spotify"
+  },
+  "YOUR PICK": {
+    "pt": "SUA ESCOLHA",
+    "es": "TU ELECCIÓN"
+  },
+  "Close dialog": {
+    "pt": "Fechar janela",
+    "es": "Cerrar ventana"
+  },
+  "Link copied. Send it to your friends.": {
+    "pt": "Link copiado. Envie para seus amigos.",
+    "es": "Enlace copiado. Envíalo a tus amigos."
+  },
+  "Select and copy the link above to share it.": {
+    "pt": "Selecione e copie o link acima para compartilhar.",
+    "es": "Selecciona y copia el enlace de arriba para compartirlo."
+  },
+  "My Grammy 2027 category list": {
+    "pt": "Minha lista de categorias do Grammy 2027",
+    "es": "Mi lista de categorías de los Grammy 2027"
+  },
+  "Make your own picks in these {0} Grammy categories.": {
+    "pt": "Faça suas escolhas nestas {0} categorias do Grammy.",
+    "es": "Elige tus favoritos en estas {0} categorías de los Grammy."
+  },
+  "Sharing is unavailable. Copy the link instead.": {
+    "pt": "Compartilhamento indisponível. Copie o link.",
+    "es": "No se puede compartir. Copia el enlace."
+  },
+  "Share your category list": {
+    "pt": "Compartilhe sua lista de categorias",
+    "es": "Comparte tu lista de categorías"
+  },
+  "Invite friends to make their own picks in your {0} selected categories. This link shares the categories only. Your votes stay on your device.": {
+    "pt": "Convide amigos para votar nas suas {0} categorias selecionadas. O link compartilha apenas as categorias. Seus votos ficam no seu dispositivo.",
+    "es": "Invita a tus amigos a votar en tus {0} categorías seleccionadas. El enlace solo comparte las categorías. Tus votos quedan en tu dispositivo."
+  },
+  "Your custom ballot link": {
+    "pt": "Link da sua votação personalizada",
+    "es": "Enlace de tu votación personalizada"
+  },
+  "Copy link": {
+    "pt": "Copiar link",
+    "es": "Copiar enlace"
+  },
+  "Share link": {
+    "pt": "Compartilhar link",
+    "es": "Compartir enlace"
+  },
+  "Your story images are ready in the downloaded ZIP.": {
+    "pt": "Seus Stories estão prontos no ZIP baixado.",
+    "es": "Tus Stories están listos en el ZIP descargado."
+  },
+  "Could not download the images. Try saving them one at a time.": {
+    "pt": "Não foi possível baixar as imagens. Tente salvar uma por vez.",
+    "es": "No se pudieron descargar las imágenes. Intenta guardarlas una por una."
+  },
+  "My Grammy 2027 picks": {
+    "pt": "Minhas escolhas do Grammy 2027",
+    "es": "Mis elecciones de los Grammy 2027"
+  },
+  "Image saved. Open Instagram and add it to your Story.": {
+    "pt": "Imagem salva. Abra o Instagram e adicione ao seu Story.",
+    "es": "Imagen guardada. Abre Instagram y añádela a tu Story."
+  },
+  "Sharing is not available here. Use “Save image” instead.": {
+    "pt": "Não é possível compartilhar aqui. Use “Salvar imagem”.",
+    "es": "No se puede compartir aquí. Usa «Guardar imagen»."
+  },
+  "One Story per musical area: {0} images, with every pick included.": {
+    "pt": "Um Story por área musical: {0} imagens, com todas as escolhas.",
+    "es": "Un Story por área musical: {0} imágenes, con todas tus elecciones."
+  },
+  "A little gold for your Instagram Story.": {
+    "pt": "Um pouco de dourado para seu Story do Instagram.",
+    "es": "Un toque dorado para tu Story de Instagram."
+  },
+  "Save an image, then add it to your Story.": {
+    "pt": "Salve uma imagem e adicione ao seu Story.",
+    "es": "Guarda una imagen y añádela a tu Story."
+  },
+  "Giving your picks the golden treatment…": {
+    "pt": "Dando um toque dourado às suas escolhas…",
+    "es": "Dando un toque dorado a tus elecciones…"
+  },
+  "Instagram Story {0} of {1}, showing your picks for {2}": {
+    "pt": "Story do Instagram {0} de {1}, com suas escolhas em {2}",
+    "es": "Story de Instagram {0} de {1}, con tus elecciones en {2}"
+  },
+  "Previous story": {
+    "pt": "Story anterior",
+    "es": "Story anterior"
+  },
+  "Story {0} of {1}": {
+    "pt": "Story {0} de {1}",
+    "es": "Story {0} de {1}"
+  },
+  "Next story": {
+    "pt": "Próximo Story",
+    "es": "Siguiente Story"
+  },
+  "Save image": {
+    "pt": "Salvar imagem",
+    "es": "Guardar imagen"
+  },
+  "Share image": {
+    "pt": "Compartilhar imagem",
+    "es": "Compartir imagen"
+  },
+  "Preparing download…": {
+    "pt": "Preparando download…",
+    "es": "Preparando descarga…"
+  },
+  "Download all {0} stories (ZIP)": {
+    "pt": "Baixar todos os {0} Stories (ZIP)",
+    "es": "Descargar los {0} Stories (ZIP)"
+  },
+  "Some artwork is unavailable. All your picks are included.": {
+    "pt": "Algumas capas estão indisponíveis. Todas as escolhas estão incluídas.",
+    "es": "Algunas portadas no están disponibles. Todas tus elecciones están incluidas."
+  },
+  "1080 × 1920 PNG · {0} & gold": {
+    "pt": "1080 × 1920 PNG · {0} e dourado",
+    "es": "1080 × 1920 PNG · {0} y dorado"
+  },
+  "Language": {
+    "pt": "Idioma",
+    "es": "Idioma"
+  },
+  "THE 2027 GRAMMYS · MY PICKS": {
+    "pt": "GRAMMY 2027 · MINHAS ESCOLHAS",
+    "es": "GRAMMY 2027 · MIS ELECCIONES"
+  },
+  "YOUR PICKS. YOUR SPOTLIGHT.": {
+    "pt": "SUAS ESCOLHAS. SEU DESTAQUE.",
+    "es": "TUS ELECCIONES. TU PROTAGONISMO."
+  },
+  "ARTWORK UNAVAILABLE": {
+    "pt": "CAPA INDISPONÍVEL",
+    "es": "PORTADA NO DISPONIBLE"
+  },
+  "Make your picks before creating a story.": {
+    "pt": "Faça suas escolhas antes de criar um Story.",
+    "es": "Elige tus favoritos antes de crear un Story."
+  },
+  "Your browser could not create an image. Please try another browser.": {
+    "pt": "Seu navegador não conseguiu criar a imagem. Tente outro navegador.",
+    "es": "Tu navegador no pudo crear la imagen. Prueba con otro navegador."
+  },
+  "Image export failed. Please try again.": {
+    "pt": "Falha ao exportar a imagem. Tente novamente.",
+    "es": "No se pudo exportar la imagen. Inténtalo de nuevo."
+  },
+  "Spotify preview: {0}": {
+    "pt": "Prévia do Spotify: {0}",
+    "es": "Muestra de Spotify: {0}"
+  },
+  "Spotify album preview: {0}": {
+    "pt": "Prévia de álbum no Spotify: {0}",
+    "es": "Muestra de álbum en Spotify: {0}"
+  },
+  "Record Of The Year": {
+    "pt": "Gravação do Ano",
+    "es": "Grabación del Año"
+  },
+  "Album Of The Year": {
+    "pt": "Álbum do Ano",
+    "es": "Álbum del Año"
+  },
+  "Song Of The Year": {
+    "pt": "Canção do Ano",
+    "es": "Canción del Año"
+  },
+  "Best New Artist": {
+    "pt": "Artista Revelação",
+    "es": "Artista Revelación"
+  },
+  "Producer Of The Year, Non-Classical": {
+    "pt": "Produtor do Ano, Não Clássico",
+    "es": "Productor del Año, No Clásico"
+  },
+  "Songwriter Of The Year, Non-Classical": {
+    "pt": "Compositor do Ano, Não Clássico",
+    "es": "Compositor del Año, No Clásico"
+  },
+  "Best Pop Solo Performance": {
+    "pt": "Melhor Performance Pop Solo",
+    "es": "Mejor Interpretación Pop Solista"
+  },
+  "Best Pop Duo/Group Performance": {
+    "pt": "Melhor Performance Pop em Duo/Grupo",
+    "es": "Mejor Interpretación Pop de Dúo/Grupo"
+  },
+  "Best Asian Pop Music Performance": {
+    "pt": "Melhor Performance de Pop Asiático",
+    "es": "Mejor Interpretación de Pop Asiático"
+  },
+  "Best Pop Vocal Album": {
+    "pt": "Melhor Álbum Vocal Pop",
+    "es": "Mejor Álbum Vocal Pop"
+  },
+  "Best Dance/Electronic Recording": {
+    "pt": "Melhor Gravação Dance/Eletrônica",
+    "es": "Mejor Grabación Dance/Electrónica"
+  },
+  "Best Dance Pop Recording": {
+    "pt": "Melhor Gravação Dance Pop",
+    "es": "Mejor Grabación Dance Pop"
+  },
+  "Best Dance/Electronic Album": {
+    "pt": "Melhor Álbum Dance/Eletrônico",
+    "es": "Mejor Álbum Dance/Electrónico"
+  },
+  "Best Remixed Recording": {
+    "pt": "Melhor Gravação Remixada",
+    "es": "Mejor Grabación Remezclada"
+  },
+  "Best Rock Performance": {
+    "pt": "Melhor Performance de Rock",
+    "es": "Mejor Interpretación de Rock"
+  },
+  "Best Metal Performance": {
+    "pt": "Melhor Performance de Metal",
+    "es": "Mejor Interpretación de Metal"
+  },
+  "Best Rock Song": {
+    "pt": "Melhor Canção de Rock",
+    "es": "Mejor Canción de Rock"
+  },
+  "Best Rock Album": {
+    "pt": "Melhor Álbum de Rock",
+    "es": "Mejor Álbum de Rock"
+  },
+  "Best Alternative Music Performance": {
+    "pt": "Melhor Performance de Música Alternativa",
+    "es": "Mejor Interpretación de Música Alternativa"
+  },
+  "Best Alternative Music Album": {
+    "pt": "Melhor Álbum de Música Alternativa",
+    "es": "Mejor Álbum de Música Alternativa"
+  },
+  "Best R&B Solo Performance": {
+    "pt": "Melhor Performance R&B Solo",
+    "es": "Mejor Interpretación R&B Solista"
+  },
+  "Best R&B Collaboration or Duo/Group Performance": {
+    "pt": "Melhor Colaboração ou Performance R&B em Duo/Grupo",
+    "es": "Mejor Colaboración o Interpretación R&B de Dúo/Grupo"
+  },
+  "Best Traditional R&B Performance": {
+    "pt": "Melhor Performance de R&B Tradicional",
+    "es": "Mejor Interpretación de R&B Tradicional"
+  },
+  "Best R&B Song": {
+    "pt": "Melhor Canção de R&B",
+    "es": "Mejor Canción de R&B"
+  },
+  "Best Progressive R&B Album": {
+    "pt": "Melhor Álbum de R&B Progressivo",
+    "es": "Mejor Álbum de R&B Progresivo"
+  },
+  "Best R&B Album": {
+    "pt": "Melhor Álbum de R&B",
+    "es": "Mejor Álbum de R&B"
+  },
+  "Best Rap Performance": {
+    "pt": "Melhor Performance de Rap",
+    "es": "Mejor Interpretación de Rap"
+  },
+  "Best Melodic Rap Performance": {
+    "pt": "Melhor Performance de Rap Melódico",
+    "es": "Mejor Interpretación de Rap Melódico"
+  },
+  "Best Rap Song": {
+    "pt": "Melhor Canção de Rap",
+    "es": "Mejor Canción de Rap"
+  },
+  "Best Rap Album": {
+    "pt": "Melhor Álbum de Rap",
+    "es": "Mejor Álbum de Rap"
+  },
+  "Best Spoken Word Poetry Album": {
+    "pt": "Melhor Álbum de Poesia Falada",
+    "es": "Mejor Álbum de Poesía Hablada"
+  },
+  "Best Jazz Performance": {
+    "pt": "Melhor Performance de Jazz",
+    "es": "Mejor Interpretación de Jazz"
+  },
+  "Best Jazz Vocal Album": {
+    "pt": "Melhor Álbum Vocal de Jazz",
+    "es": "Mejor Álbum Vocal de Jazz"
+  },
+  "Best Jazz Instrumental Album": {
+    "pt": "Melhor Álbum Instrumental de Jazz",
+    "es": "Mejor Álbum Instrumental de Jazz"
+  },
+  "Best Large Jazz Ensemble Album": {
+    "pt": "Melhor Álbum de Grande Conjunto de Jazz",
+    "es": "Mejor Álbum de Gran Conjunto de Jazz"
+  },
+  "Best Latin Jazz Album": {
+    "pt": "Melhor Álbum de Jazz Latino",
+    "es": "Mejor Álbum de Jazz Latino"
+  },
+  "Best Alternative Jazz Album": {
+    "pt": "Melhor Álbum de Jazz Alternativo",
+    "es": "Mejor Álbum de Jazz Alternativo"
+  },
+  "Best Traditional Pop Vocal Performance": {
+    "pt": "Melhor Performance Vocal de Pop Tradicional",
+    "es": "Mejor Interpretación Vocal de Pop Tradicional"
+  },
+  "Best Traditional Pop Vocal Album": {
+    "pt": "Melhor Álbum Vocal de Pop Tradicional",
+    "es": "Mejor Álbum Vocal de Pop Tradicional"
+  },
+  "Best Contemporary Instrumental Album": {
+    "pt": "Melhor Álbum Instrumental Contemporâneo",
+    "es": "Mejor Álbum Instrumental Contemporáneo"
+  },
+  "Best Musical Theater Album": {
+    "pt": "Melhor Álbum de Teatro Musical",
+    "es": "Mejor Álbum de Teatro Musical"
+  },
+  "Best Country Solo Performance": {
+    "pt": "Melhor Performance Country Solo",
+    "es": "Mejor Interpretación Country Solista"
+  },
+  "Best Country Duo/Group Performance": {
+    "pt": "Melhor Performance Country em Duo/Grupo",
+    "es": "Mejor Interpretación Country de Dúo/Grupo"
+  },
+  "Best Country Song": {
+    "pt": "Melhor Canção Country",
+    "es": "Mejor Canción Country"
+  },
+  "Best Traditional Country Album": {
+    "pt": "Melhor Álbum de Country Tradicional",
+    "es": "Mejor Álbum de Country Tradicional"
+  },
+  "Best Contemporary Country Album": {
+    "pt": "Melhor Álbum de Country Contemporâneo",
+    "es": "Mejor Álbum de Country Contemporáneo"
+  },
+  "Best American Roots Performance": {
+    "pt": "Melhor Performance de Música de Raiz Americana",
+    "es": "Mejor Interpretación de Música de Raíces Americanas"
+  },
+  "Best Americana Performance": {
+    "pt": "Melhor Performance de Americana",
+    "es": "Mejor Interpretación de Americana"
+  },
+  "Best American Roots Song": {
+    "pt": "Melhor Canção de Música de Raiz Americana",
+    "es": "Mejor Canción de Música de Raíces Americanas"
+  },
+  "Best Americana Album": {
+    "pt": "Melhor Álbum de Americana",
+    "es": "Mejor Álbum de Americana"
+  },
+  "Best Bluegrass Album": {
+    "pt": "Melhor Álbum de Bluegrass",
+    "es": "Mejor Álbum de Bluegrass"
+  },
+  "Best Traditional Blues Album": {
+    "pt": "Melhor Álbum de Blues Tradicional",
+    "es": "Mejor Álbum de Blues Tradicional"
+  },
+  "Best Contemporary Blues Album": {
+    "pt": "Melhor Álbum de Blues Contemporâneo",
+    "es": "Mejor Álbum de Blues Contemporáneo"
+  },
+  "Best Traditional Folk Album": {
+    "pt": "Melhor Álbum de Folk Tradicional",
+    "es": "Mejor Álbum de Folk Tradicional"
+  },
+  "Best Contemporary Folk Album": {
+    "pt": "Melhor Álbum de Folk Contemporâneo",
+    "es": "Mejor Álbum de Folk Contemporáneo"
+  },
+  "Best Regional Roots Music Album": {
+    "pt": "Melhor Álbum de Música de Raiz Regional",
+    "es": "Mejor Álbum de Música de Raíces Regionales"
+  },
+  "Best Gospel Performance/Song": {
+    "pt": "Melhor Performance/Canção Gospel",
+    "es": "Mejor Interpretación/Canción Góspel"
+  },
+  "Best Contemporary Christian Music Performance/Song": {
+    "pt": "Melhor Performance/Canção de Música Cristã Contemporânea",
+    "es": "Mejor Interpretación/Canción de Música Cristiana Contemporánea"
+  },
+  "Best Gospel Album": {
+    "pt": "Melhor Álbum Gospel",
+    "es": "Mejor Álbum Góspel"
+  },
+  "Best Contemporary Christian Music Album": {
+    "pt": "Melhor Álbum de Música Cristã Contemporânea",
+    "es": "Mejor Álbum de Música Cristiana Contemporánea"
+  },
+  "Best Roots Gospel Album": {
+    "pt": "Melhor Álbum de Gospel de Raiz",
+    "es": "Mejor Álbum de Góspel de Raíces"
+  },
+  "Best Latin Song": {
+    "pt": "Melhor Canção Latina",
+    "es": "Mejor Canción Latina"
+  },
+  "Best Latin Pop Album": {
+    "pt": "Melhor Álbum de Pop Latino",
+    "es": "Mejor Álbum de Pop Latino"
+  },
+  "Best Música Urbana Album": {
+    "pt": "Melhor Álbum de Música Urbana",
+    "es": "Mejor Álbum de Música Urbana"
+  },
+  "Best Latin Rock Or Alternative Album": {
+    "pt": "Melhor Álbum de Rock Latino ou Alternativo",
+    "es": "Mejor Álbum de Rock Latino o Alternativo"
+  },
+  "Best Música Mexicana Album (Including Tejano)": {
+    "pt": "Melhor Álbum de Música Mexicana (Incluindo Tejano)",
+    "es": "Mejor Álbum de Música Mexicana (Incluido Tejano)"
+  },
+  "Best Tropical Latin Album": {
+    "pt": "Melhor Álbum de Música Latina Tropical",
+    "es": "Mejor Álbum de Música Latina Tropical"
+  },
+  "Best Global Music Performance": {
+    "pt": "Melhor Performance de Música Global",
+    "es": "Mejor Interpretación de Música Global"
+  },
+  "Best African Music Performance": {
+    "pt": "Melhor Performance de Música Africana",
+    "es": "Mejor Interpretación de Música Africana"
+  },
+  "Best Global Music Album": {
+    "pt": "Melhor Álbum de Música Global",
+    "es": "Mejor Álbum de Música Global"
+  },
+  "Best Reggae Album": {
+    "pt": "Melhor Álbum de Reggae",
+    "es": "Mejor Álbum de Reggae"
+  },
+  "Best New Age, Ambient, Or Chant Album": {
+    "pt": "Melhor Álbum de New Age, Ambient ou Canto",
+    "es": "Mejor Álbum de New Age, Ambient o Canto"
+  },
+  "Best Children's Music Album": {
+    "pt": "Melhor Álbum de Música Infantil",
+    "es": "Mejor Álbum de Música Infantil"
+  },
+  "Best Comedy Album": {
+    "pt": "Melhor Álbum de Comédia",
+    "es": "Mejor Álbum de Comedia"
+  },
+  "Best Audio Book, Narration, and Storytelling Recording": {
+    "pt": "Melhor Gravação de Audiolivro, Narração e Contação de Histórias",
+    "es": "Mejor Grabación de Audiolibro, Narración y Relatos"
+  },
+  "Best Compilation Soundtrack For Visual Media": {
+    "pt": "Melhor Coletânea de Trilha Sonora para Mídia Visual",
+    "es": "Mejor Compilación de Banda Sonora para Medios Visuales"
+  },
+  "Best Score Soundtrack For Visual Media (Includes Film And Television)": {
+    "pt": "Melhor Trilha Sonora Original para Mídia Visual (Cinema e Televisão)",
+    "es": "Mejor Banda Sonora Original para Medios Visuales (Cine y Televisión)"
+  },
+  "Best Score Soundtrack For Video Games and Other Interactive Media": {
+    "pt": "Melhor Trilha Sonora Original para Videogames e Outras Mídias Interativas",
+    "es": "Mejor Banda Sonora Original para Videojuegos y Otros Medios Interactivos"
+  },
+  "Best Song Written For Visual Media": {
+    "pt": "Melhor Canção Escrita para Mídia Visual",
+    "es": "Mejor Canción Escrita para Medios Visuales"
+  },
+  "Best Music Video": {
+    "pt": "Melhor Videoclipe",
+    "es": "Mejor Videoclip"
+  },
+  "Best Music Film": {
+    "pt": "Melhor Filme Musical",
+    "es": "Mejor Película Musical"
+  },
+  "Best Recording Package": {
+    "pt": "Melhor Projeto Gráfico de Gravação",
+    "es": "Mejor Diseño de Presentación de Grabación"
+  },
+  "Best Album Cover": {
+    "pt": "Melhor Capa de Álbum",
+    "es": "Mejor Portada de Álbum"
+  },
+  "Best Album Notes": {
+    "pt": "Melhor Texto de Encarte de Álbum",
+    "es": "Mejores Notas de Álbum"
+  },
+  "Best Historical Album": {
+    "pt": "Melhor Álbum Histórico",
+    "es": "Mejor Álbum Histórico"
+  },
+  "Best Engineered Album, Non-Classical": {
+    "pt": "Melhor Engenharia de Som em Álbum, Não Clássico",
+    "es": "Mejor Ingeniería de Sonido en Álbum, No Clásico"
+  },
+  "Best Engineered Album, Classical": {
+    "pt": "Melhor Engenharia de Som em Álbum, Clássico",
+    "es": "Mejor Ingeniería de Sonido en Álbum, Clásico"
+  },
+  "Producer Of The Year, Classical": {
+    "pt": "Produtor do Ano, Clássico",
+    "es": "Productor del Año, Clásico"
+  },
+  "Best Immersive Audio Album": {
+    "pt": "Melhor Álbum de Áudio Imersivo",
+    "es": "Mejor Álbum de Audio Inmersivo"
+  },
+  "Best Instrumental Composition": {
+    "pt": "Melhor Composição Instrumental",
+    "es": "Mejor Composición Instrumental"
+  },
+  "Best Arrangement, Instrumental Or A Cappella": {
+    "pt": "Melhor Arranjo Instrumental ou A Cappella",
+    "es": "Mejor Arreglo Instrumental o A Cappella"
+  },
+  "Best Arrangement, Instruments And Vocals": {
+    "pt": "Melhor Arranjo para Instrumentos e Voz",
+    "es": "Mejor Arreglo para Instrumentos y Voz"
+  },
+  "Best Orchestral Performance": {
+    "pt": "Melhor Performance Orquestral",
+    "es": "Mejor Interpretación Orquestal"
+  },
+  "Best Opera Recording": {
+    "pt": "Melhor Gravação de Ópera",
+    "es": "Mejor Grabación de Ópera"
+  },
+  "Best Choral Performance": {
+    "pt": "Melhor Performance Coral",
+    "es": "Mejor Interpretación Coral"
+  },
+  "Best Chamber Music/Small Ensemble Performance": {
+    "pt": "Melhor Performance de Música de Câmara/Pequeno Conjunto",
+    "es": "Mejor Interpretación de Música de Cámara/Pequeño Conjunto"
+  },
+  "Best Classical Instrumental Solo": {
+    "pt": "Melhor Solo Instrumental Clássico",
+    "es": "Mejor Solo Instrumental Clásico"
+  },
+  "Best Classical Solo Vocal Album": {
+    "pt": "Melhor Álbum Vocal Clássico Solo",
+    "es": "Mejor Álbum Vocal Clásico Solista"
+  },
+  "Best Classical Compendium": {
+    "pt": "Melhor Compêndio Clássico",
+    "es": "Mejor Compendio Clásico"
+  },
+  "Best Contemporary Classical Composition": {
+    "pt": "Melhor Composição Clássica Contemporânea",
+    "es": "Mejor Composición Clásica Contemporánea"
+  },
+  "General Field": {
+    "pt": "Categorias Gerais",
+    "es": "Categorías Generales"
+  },
+  "Pop & Dance/Electronic": {
+    "pt": "Pop e Dance/Eletrônica",
+    "es": "Pop y Dance/Electrónica"
+  },
+  "Rock, Metal & Alternative Music": {
+    "pt": "Rock, Metal e Música Alternativa",
+    "es": "Rock, Metal y Música Alternativa"
+  },
+  "R&B, Rap & Spoken Word Poetry": {
+    "pt": "R&B, Rap e Poesia Falada",
+    "es": "R&B, Rap y Poesía Hablada"
+  },
+  "Jazz, Traditional Pop, Contemporary Instrumental & Musical Theater": {
+    "pt": "Jazz, Pop Tradicional, Instrumental Contemporâneo e Teatro Musical",
+    "es": "Jazz, Pop Tradicional, Instrumental Contemporáneo y Teatro Musical"
+  },
+  "Country & American Roots Music": {
+    "pt": "Country e Música de Raiz Americana",
+    "es": "Country y Música de Raíces Americanas"
+  },
+  "Gospel & Contemporary Christian Music": {
+    "pt": "Gospel e Música Cristã Contemporânea",
+    "es": "Góspel y Música Cristiana Contemporánea"
+  },
+  "Latin, Global, African, Reggae & New Age, Ambient, Or Chant": {
+    "pt": "Música Latina, Global, Africana, Reggae, New Age, Ambient e Canto",
+    "es": "Música Latina, Global, Africana, Reggae, New Age, Ambient y Canto"
+  },
+  "Children's, Comedy, Audio Book Narration and Storytelling, Visual Media & Music Video/Film": {
+    "pt": "Infantil, Comédia, Audiolivros, Narração, Mídia Visual e Vídeo/Filme Musical",
+    "es": "Infantil, Comedia, Audiolibros, Narración, Medios Visuales y Video/Película Musical"
+  },
+  "Package, Notes & Historical": {
+    "pt": "Projeto Gráfico, Encartes e Histórico",
+    "es": "Diseño, Notas e Histórico"
+  },
+  "Production, Engineering, Composition & Arrangement": {
+    "pt": "Produção, Engenharia de Som, Composição e Arranjo",
+    "es": "Producción, Ingeniería de Sonido, Composición y Arreglo"
+  },
+  "Classical": {
+    "pt": "Música Clássica",
+    "es": "Música Clásica"
+  },
+  "Your picks, story-ready.": {
+    "pt": "Suas escolhas, prontas para o Story.",
+    "es": "Tus elecciones, listas para el Story."
+  }
+}
